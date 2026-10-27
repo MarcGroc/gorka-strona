@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GÓRKA — ogrodzenia, bramy i dachy na Podhalu | Rzepiska</title>
+<meta name="description" content="Ogrodzenia modułowe, łupane i metalowe, bramy garażowe oraz dachy. Pomiar, wycena i montaż własną ekipą — Rzepiska, Bukowina, Zakopane, Nowy Targ. Od 2015 roku.">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="GÓRKA — ogrodzenia, bramy i dachy na Podhalu">
+<meta property="og:description" content="Pomiar, wycena i montaż własną ekipą. JONIEC · JARMEX · BUDMAT. Rzepiska, Podhale.">
+<meta property="og:type" content="website">
+<!-- MOCKUP: wersja wstępna, jeden plik, bez buildu. Do podmiany: logo, zdjęcia realizacji, endpoint formularza. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@300..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --las:#12261D;        /* najciemniejsza jodła — tło ciemnych sekcji */
+  --jodla:#2C5B48;
+  --jodla-jasna:#4C8168;
+  --kamien:#F1ECE2;     /* ciepłe tło bazowe */
+  --piasek:#DCD1BC;
+  --modrzew:#B0703A;    /* akcent / CTA */
+  --modrzew-ciemny:#8C5527;
+  --niebo:#C9DDE2;
+  --grafit:#16211C;
+  --mgla:#F7F4EE;
+
+  --r-karta:32px;
+  --r-duzy:44px;
+  --r-pill:999px;
+
+  --max:1180px;
+  --pad:clamp(20px,5vw,56px);
+
+  --f-head:"Fraunces","Iowan Old Style",Georgia,serif;
+  --f-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+body{
+  margin:0;
+  background:var(--kamien);
+  color:var(--grafit);
+  font-family:var(--f-body);
+  font-size:clamp(1rem,.55vw + .88rem,1.075rem);
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-head);font-weight:400;line-height:1.06;letter-spacing:-.015em;margin:0}
+h1{font-size:clamp(2.5rem,6.2vw,5rem)}
+h2{font-size:clamp(1.9rem,3.6vw,3.1rem)}
+h3{font-size:clamp(1.15rem,1.4vw,1.35rem);font-weight:500}
+p{margin:0}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+.wrap--waski{max-width:820px}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;z-index:99;background:var(--las);color:var(--mgla);padding:12px 18px;border-radius:var(--r-pill)}
+:focus-visible{outline:3px solid var(--modrzew);outline-offset:3px;border-radius:6px}
+
+/* ---------- typografia pomocnicza ---------- */
+.eyebrow{
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:500;color:var(--jodla);
+}
+.eyebrow--jasny{color:var(--niebo)}
+.lead{font-size:clamp(1.02rem,1.1vw,1.2rem);color:#3C4A42;max-width:56ch}
+
+/* ---------- przyciski ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  padding:.95em 1.6em;border-radius:var(--r-pill);
+  font-weight:500;text-decoration:none;border:1px solid transparent;
+  transition:transform .25s ease,background .25s ease,color .25s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn--glowny{background:var(--modrzew);color:#fff}
+.btn--glowny:hover{background:var(--modrzew-ciemny)}
+.btn--obrys{border-color:rgba(22,33,28,.22);color:var(--grafit)}
+.btn--obrys:hover{border-color:var(--grafit)}
+.btn--jasny{background:var(--mgla);color:var(--las)}
+.btn--na-ciemnym{background:transparent;color:var(--mgla);border-color:rgba(241,236,226,.34)}
+.btn--na-ciemnym:hover{border-color:var(--mgla)}
+
+/* ---------- header ---------- */
+.header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(241,236,226,.82);
+  backdrop-filter:blur(14px) saturate(140%);
+  border-bottom:1px solid rgba(22,33,28,.08);
+}
+.header__in{display:flex;align-items:center;gap:clamp(16px,3vw,40px);padding-block:14px}
+
+/* LOGO: slot na plik klienta. Teraz tymczasowy lockup tekstowy. */
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+.logo__obraz{width:160px;height:auto;object-fit:contain;filter:brightness(0)}
+.stopka .logo__obraz{width:160px;height:auto;filter:none}
+.logo__znak{
+  width:42px;height:42px;flex:none;border-radius:50%;
+  background:
+    radial-gradient(120% 120% at 50% 120%, var(--jodla-jasna) 0%, var(--jodla) 45%, var(--las) 100%);
+  position:relative;overflow:hidden;
+}
+.logo__znak::before,.logo__znak::after{
+  content:"";position:absolute;left:-10%;right:-10%;bottom:-6%;
+  height:62%;background:var(--mgla);opacity:.9;
+  clip-path:polygon(0 100%,26% 34%,44% 68%,62% 18%,82% 62%,100% 100%);
+}
+.logo__znak::after{height:44%;opacity:.42;bottom:-2%;transform:translateX(10%)}
+.logo__tekst{display:flex;flex-direction:column;line-height:1}
+.logo__nazwa{
+  font-family:var(--f-head);font-size:1.22rem;letter-spacing:.16em;
+  font-weight:600;text-transform:uppercase;
+}
+.logo__opis{
+  font-size:.58rem;letter-spacing:.19em;text-transform:uppercase;
+  color:var(--jodla);margin-top:5px;
+}
+.nav{display:none;gap:clamp(14px,2vw,30px);margin-left:auto}
+.nav a{
+  text-decoration:none;font-size:.94rem;color:#2A352E;padding-block:6px;
+  border-bottom:1px solid transparent;
+}
+.nav a:hover{border-color:var(--modrzew)}
+.header__cta{margin-left:auto;display:none}
+.header__tel{
+  display:inline-flex;align-items:center;gap:.5em;
+  background:var(--las);color:var(--mgla);text-decoration:none;
+  padding:.72em 1.15em;border-radius:var(--r-pill);font-size:.92rem;font-weight:500;
+}
+.menu-btn{
+  margin-left:auto;display:inline-flex;align-items:center;justify-content:center;
+  width:46px;height:46px;border-radius:50%;border:1px solid rgba(22,33,28,.18);
+  background:transparent;cursor:pointer;
+}
+.menu-btn span{display:block;width:17px;height:1.5px;background:var(--grafit);position:relative}
+.menu-btn span::before,.menu-btn span::after{
+  content:"";position:absolute;left:0;width:17px;height:1.5px;background:var(--grafit);
+}
+.menu-btn span::before{top:-5px}
+.menu-btn span::after{top:5px}
+.menu{display:none;padding:0 0 22px}
+.menu[data-otwarte="tak"]{display:block}
+.menu ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.menu a{display:block;padding:13px 4px;text-decoration:none;border-bottom:1px solid rgba(22,33,28,.09);font-size:1.02rem}
+@media (min-width:960px){
+  .nav,.header__cta{display:flex}
+  .menu-btn{display:none}
+  .header__cta{margin-left:0}
+  .nav{margin-left:auto}
+}
+
+/* ---------- hero ---------- */
+.hero{padding-block:clamp(28px,4vw,56px)}
+.hero__in{display:grid;gap:28px;align-items:start}
+.hero__tekst{min-width:0}
+.hero__tytul{margin-top:18px;max-width:23ch;font-size:clamp(2rem,3.2vw,3rem)}
+.hero__zdjecie{margin:0;overflow:hidden;aspect-ratio:1/1;border-radius:var(--r-duzy);background:var(--piasek)}
+.hero__zdjecie img{width:100%;height:100%;object-fit:cover}
+@media(min-width:960px){
+  .hero__in{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:32px}
+  .hero__stopka{grid-column:1/-1}
+}
+@media(max-width:959px){.hero__zdjecie{grid-row:1;border-radius:28px}}
+section[id]{scroll-margin-top:120px}
+.hero__tytul em{font-style:italic;color:var(--jodla)}
+.hero__lead{margin-top:26px}
+.hero__akcje{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(100%,480px);gap:10px;margin-top:28px}
+.hero__akcje .btn{justify-content:center;text-align:center;padding:10px 12px;min-height:48px;font-size:.84rem;line-height:1.3}
+.hero__akcje .btn--glowny{background:#AD4945;color:#fff}
+.hero__akcje .btn--glowny:hover{background:#923B38}
+@media(max-width:600px){.hero__akcje{grid-template-columns:1fr;width:min(100%,240px)}}
+.hero__stopka{
+  display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,44px);
+  margin-top:8px;padding-top:26px;
+  border-top:1px solid rgba(22,33,28,.14);
+}
+.hero__fakt{max-width:24ch}
+.hero__fakt strong{display:block;font-family:var(--f-head);font-size:1.05rem;font-weight:600}
+.hero__fakt span{font-size:.86rem;color:#4B5A52}
+
+/* ---------- pasek marek ---------- */
+.marki{background:var(--las);color:var(--mgla);padding-block:clamp(26px,3.4vw,40px)}
+.marki__in{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(18px,3vw,46px);justify-content:space-between}
+.marki__etykieta{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--niebo)}
+.marki__lista{display:flex;flex-wrap:wrap;gap:clamp(14px,2.4vw,34px);align-items:center;margin:0;padding:0;list-style:none}
+.marki__lista li{
+  font-family:var(--f-head);font-size:clamp(1.05rem,1.6vw,1.4rem);
+  letter-spacing:.16em;text-transform:uppercase;opacity:.88;
+}
+
+/* ---------- sekcje ---------- */
+.sekcja{padding-block:clamp(56px,8vw,110px)}
+.sekcja__naglowek{display:flex;flex-wrap:wrap;align-items:end;gap:clamp(16px,3vw,46px);justify-content:space-between}
+.sekcja__naglowek p{max-width:46ch}
+.sekcja--ciemna{background:var(--las);color:var(--mgla)}
+.sekcja--ciemna .lead{color:#C7D3CB}
+.sekcja--mgla{background:var(--mgla)}
+
+/* ---------- oferta ---------- */
+.oferta{display:grid;gap:clamp(14px,1.6vw,20px);margin-top:clamp(30px,4vw,48px);
+  grid-template-columns:1fr}
+@media (min-width:640px){.oferta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.karta{
+  background:var(--mgla);
+  border-radius:var(--r-karta);
+  padding:clamp(22px,2.4vw,30px);
+  display:flex;flex-direction:column;gap:14px;
+  min-height:100%;
+  border:1px solid rgba(22,33,28,.07);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.karta:hover{transform:translateY(-3px);box-shadow:0 18px 40px -28px rgba(18,38,29,.55)}
+.karta__ikona{
+  width:56px;height:56px;border-radius:var(--r-pill) ;
+  background:var(--kamien);display:grid;place-items:center;color:var(--jodla);
+}
+.karta__ikona svg{width:28px;height:28px}
+.karta h3{margin-top:2px}
+.karta p{font-size:.94rem;color:#4B5A52}
+.karta__link{
+  margin-top:auto;padding-top:10px;font-size:.88rem;text-decoration:none;
+  color:var(--modrzew-ciemny);font-weight:500;
+}
+.karta__link:hover{text-decoration:underline}
+.karta--szeroka{
+  grid-column:1/-1;
+  border-radius:var(--r-duzy);
+  background:linear-gradient(105deg,var(--jodla) 0%,var(--las) 62%);
+  color:var(--mgla);
+  display:grid;gap:8px 30px;align-items:center;
+  grid-template-columns:1fr;
+  padding:clamp(26px,3.2vw,40px);
+  position:relative;overflow:hidden;
+}
+.karta--szeroka h3{font-size:clamp(1.3rem,2vw,1.7rem);color:var(--mgla)}
+.karta--szeroka p{color:#C7D3CB;max-width:60ch}
+.karta--szeroka .karta__link{color:var(--niebo)}
+@media (min-width:720px){
+  .karta--szeroka{grid-template-columns:1fr auto}
+}
+
+/* ---------- proces ---------- */
+.proces{position:relative;margin-top:clamp(34px,4.6vw,54px)}
+.proces__linia{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;display:none}
+.kroki{list-style:none;margin:0;padding:0;display:grid;gap:clamp(22px,3vw,30px);
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));counter-reset:krok}
+.krok{position:relative;padding-left:0}
+.krok__num{
+  counter-increment:krok;
+  display:grid;place-items:center;
+  width:52px;height:52px;border-radius:50%;
+  background:var(--mgla);color:var(--jodla);
+  border:1px solid rgba(22,33,28,.14);
+  font-family:var(--f-head);font-size:1.05rem;
+  margin-bottom:16px;
+}
+.krok__num::before{content:counter(krok)}
+.krok h3{font-size:1.1rem}
+.krok p{margin-top:8px;font-size:.93rem;color:#4B5A52}
+.sekcja--ciemna .krok__num{background:transparent;border-color:rgba(241,236,226,.28);color:var(--niebo)}
+.sekcja--ciemna .krok p{color:#B9C7BF}
+
+/* ---------- realizacje ---------- */
+.realizacje{display:grid;gap:22px;margin-top:40px;grid-template-columns:1fr}
+.kadr{position:relative;display:block;text-decoration:none;overflow:hidden;aspect-ratio:3/2;border-radius:28px;background:var(--piasek);margin:0}
+.kadr img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
+.kadr:hover img{transform:scale(1.025)}
+.kadr:focus-visible{outline-offset:5px}
+.kadr__podpis{position:absolute;inset:auto 0 0;padding:44px 76px 22px 24px;background:linear-gradient(transparent,rgba(10,18,14,.9));color:#fff}
+.kadr__podpis strong{display:block;font-size:1.15rem}
+.kadr__podpis small{display:block;margin-top:4px}
+.kadr__otworz{position:absolute;right:16px;bottom:16px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--mgla);color:var(--las);font-size:1.5rem}
+@media(min-width:640px){.realizacje{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.galeria-dialog{width:min(1200px,94vw);max-height:94dvh;padding:16px;border:0;border-radius:24px;background:var(--las);color:var(--mgla)}
+.galeria-dialog::backdrop{background:rgba(10,18,14,.86)}
+.galeria-dialog__pasek{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.galeria-dialog button{font:inherit;cursor:pointer;min-width:48px;min-height:48px;border:1px solid #708478;border-radius:999px;background:transparent;color:var(--mgla);padding:8px 16px}
+.galeria-dialog__obraz{width:100%;height:min(70dvh,800px);object-fit:contain}
+.galeria-dialog__nawigacja{display:flex;justify-content:space-between;gap:12px;margin-top:12px}
+html.galeria-otwarta{overflow:hidden}
+
+/* ---------- dlaczego ---------- */
+.dlaczego{display:grid;gap:clamp(18px,2.4vw,34px);margin-top:clamp(28px,4vw,44px);
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.dlaczego > div{border-top:1px solid rgba(241,236,226,.2);padding-top:18px}
+.dlaczego h3{color:var(--mgla);font-size:1.08rem}
+.dlaczego p{margin-top:8px;font-size:.93rem;color:#B9C7BF}
+
+/* ---------- formularz ---------- */
+.kontakt{display:grid;gap:clamp(30px,4vw,60px);grid-template-columns:1fr;align-items:start}
+@media (min-width:900px){.kontakt{grid-template-columns:.85fr 1.15fr}}
+.formularz{
+  background:var(--mgla);border-radius:var(--r-duzy);
+  padding:clamp(24px,3vw,40px);border:1px solid rgba(22,33,28,.08);
+}
+.pola{display:grid;gap:16px;grid-template-columns:1fr}
+@media (min-width:640px){.pola{grid-template-columns:1fr 1fr}.pole--pelne{grid-column:1/-1}}
+.pole{display:flex;flex-direction:column;gap:7px}
+.pole label{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--jodla);font-weight:500}
+.pole input,.pole select,.pole textarea{
+  font:inherit;font-size:.98rem;color:var(--grafit);
+  background:#fff;border:1px solid rgba(22,33,28,.16);
+  border-radius:18px;padding:.85em 1em;width:100%;
+}
+.pole textarea{min-height:104px;resize:vertical;border-radius:22px}
+.pole input:focus,.pole select:focus,.pole textarea:focus{
+  outline:none;border-color:var(--jodla);
+  box-shadow:0 0 0 4px rgba(44,91,72,.13);
+}
+.formularz__stopka{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:22px}
+.formularz__nota{font-size:.78rem;color:#66746D;max-width:38ch}
+.formularz__status{font-size:.9rem;color:var(--jodla);margin-top:14px;min-height:1.4em}
+.kontakt__dane{display:grid;gap:14px;margin-top:26px}
+.kontakt__dane a{text-decoration:none;font-family:var(--f-head);font-size:clamp(1.1rem,1.6vw,1.35rem)}
+.kontakt__dane a:hover{color:var(--modrzew-ciemny)}
+.kontakt__dane address{font-style:normal;color:#44524A;font-size:.96rem;line-height:1.7}
+
+/* ---------- stopka ---------- */
+.stopka{background:var(--las);color:#B9C7BF;padding-block:clamp(38px,5vw,64px)}
+.stopka__in{display:grid;gap:clamp(26px,4vw,48px);grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+.stopka .logo__nazwa{color:var(--mgla)}
+.stopka .logo__opis{color:var(--niebo)}
+.stopka h4{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--niebo);margin:0 0 12px;font-weight:500}
+.stopka ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:.92rem}
+.stopka a{text-decoration:none}
+.stopka a:hover{color:var(--mgla)}
+.stopka__dol{
+  margin-top:clamp(30px,4vw,46px);padding-top:20px;
+  border-top:1px solid rgba(241,236,226,.14);
+  display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;
+  font-size:.8rem;color:#93A79C;
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#tresc">Przejdź do treści</a>
+
+<header class="header">
+  <div class="wrap header__in">
+    <!-- Logo klienta. -->
+    <a class="logo" href="#" aria-label="GÓRKA — Dachy, Bramy, Ogrodzenia. Strona główna">
+      <img class="logo__obraz" src="logo-gorka-biale.png" alt="Górka Ogrodzenia" width="266" height="99">
+    </a>
+
+    <nav class="nav" aria-label="Nawigacja główna">
+      <a href="#oferta">Oferta</a>
+      <a href="#realizacje">Realizacje</a>
+      <a href="#proces">Jak pracujemy</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="header__cta">
+      <a class="header__tel" href="tel:+4812345">
+        <span aria-hidden="true">☎</span> 12345
+      </a>
+    </div>
+
+    <button class="menu-btn" type="button" aria-controls="menu" aria-expanded="false" aria-label="Menu">
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+  <div class="wrap menu" id="menu">
+    <ul>
+      <li><a href="#oferta">Oferta</a></li>
+      <li><a href="#realizacje">Realizacje</a></li>
+      <li><a href="#proces">Jak pracujemy</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="tel:+48575228298">Zadzwoń: 123458</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="tresc">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-tytul">
+    <div class="wrap hero__in">
+      <div class="hero__tekst">
+      <p class="eyebrow"> Podhale · od 2015 roku</p>
+      <h1 class="hero__tytul" id="hero-tytul">Ogrodzenia, które <em>stoją</em> długo. te teksty to są jako wypełniacze na razie</h1>
+      <p class="lead hero__lead">
+        Modułowe, łupane i metalowe oraz bramy, furtki. Przyjeżdżamy, mierzymy,
+        wyceniamy i montujemy.
+      </p>
+      <div class="hero__akcje">
+        <a class="btn btn--glowny" href="#kontakt">Zamów bezpłatny pomiar</a>
+        <a class="btn btn--obrys" href="#realizacje">Zobacz realizacje</a>
+      </div>
+
+      </div>
+      <!-- Tymczasowe zdjęcie główne; docelowy wybór po stronie klienta. -->
+      <figure class="hero__zdjecie">
+        <img src="zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.31.jpeg" alt="Ogrodzenie przy domu — zdjęcie z realizacji" width="2040" height="1530" fetchpriority="high">
+      </figure>
+      <div class="hero__stopka">
+        <div class="hero__fakt">
+          <strong>Własna ekipa</strong>
+          <span>Ta sama osoba mierzy, wycenia i montuje.</span>
+        </div>
+        <div class="hero__fakt">
+          <strong>Sprawdzone systemy</strong>
+          <span>JONIEC · JARMEX · BUDMAT</span>
+        </div>
+        <div class="hero__fakt">
+          <strong>Teren</strong>
+          <span>Rzepiska, Bukowina, Zakopane, Nowy Targ i okolice.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MARKI ============ -->
+  <section class="marki" aria-label="Producenci, z którymi pracujemy">
+    <div class="wrap marki__in">
+      <p class="marki__etykieta">Pracujemy na systemach</p>
+      <ul class="marki__lista">
+        <li>Joniec</li>
+        <li>Jarmex</li>
+        <li>Budmat</li>
+        <li>i inne</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ OFERTA ============ -->
+  <section class="sekcja" id="oferta" aria-labelledby="oferta-tytul">
+    <div class="wrap">
+      <div class="sekcja__naglowek">
+        <div>
+          <p class="eyebrow">Oferta</p>
+          <h2 id="oferta-tytul">Cztery rzeczy robimy które robimy najlepiej.</h2>
+        </div>
+        <p class="lead">Doradzamy materiał pod konkretne miejsce: spadek terenu, wiatr, sąsiedztwo,
+        to, czy za ogrodzeniem ma być spokój, czy reprezentacja.</p>
+      </div>
+
+      <div class="oferta">
+        <article class="karta">
+          <span class="karta__ikona" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <rect x="3" y="7" width="4" height="12" rx="1.4"/><rect x="10" y="7" width="4" height="12" rx="1.4"/>
+              <rect x="17" y="7" width="4" height="12" rx="1.4"/><path d="M3 4.5h18"/>
+            </svg>
+          </span>
+          <h3>Ogrodzenia modułowe</h3>
+          <p>Prefabrykowane przęsła i podmurówki JONIEC. Powtarzalny wymiar, szybki montaż, pewny termin.</p>
+          <a class="karta__link" href="#kontakt">Zapytaj o wycenę →</a>
+          <a class="karta__link" href="#galeria-modulowe" data-otworz-kategorie="modulowe">Zobacz realizacje→</a>
+        </article>
+
+        <article class="karta">
+          <span class="karta__ikona" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M4 20V8l4-3 4 3v12"/><path d="M12 20V10l4-2 4 2v10"/><path d="M3 20h18"/>
+            </svg>
+          </span>
+          <h3>Ogrodzenia łupane</h3>
+          <p>Kamień łupany — ciężki, cichy i miejscowy. Dobrze znosi mróz i halny, starzeje się bez wstydu.</p>
+          <a class="karta__link" href="#kontakt">Zapytaj o wycenę →</a>
+          <a class="karta__link" href="#galeria-lupane" data-otworz-kategorie="lupane">Zobacz realizacje→</a>
+        </article>
+
+        <article class="karta">
+          <span class="karta__ikona" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M6 3v18M12 3v18M18 3v18"/><path d="M3 7.5h18M3 16.5h18"/>
+            </svg>
+          </span>
+          <h3>Ogrodzenia metalowe</h3>
+          <p>Sztachety i panele BUDMAT — nowoczesna linia, dowolny kolor z palety RAL, furtki i bramy w tym samym systemie.</p>
+          <a class="karta__link" href="#kontakt">Zapytaj o wycenę →</a>
+          <a class="karta__link" href="#galeria-metalowe" data-otworz-kategorie="metalowe">Zobacz realizacje→</a>
+        </article>
+
+        <article class="karta">
+          <span class="karta__ikona" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <path d="M3 6.5h18v11H3z"/><path d="M3 12h18"/><path d="M9 6.5v11"/>
+            </svg>
+          </span>
+          <h3>Bramy garażowe</h3>
+          <p>Segmentowe i uchylne, z automatyką i pilotem. Pomiar i montaż w jednym terminie.</p>
+          <a class="karta__link" href="#kontakt">Zapytaj o wycenę →</a>
+          <a class="karta__link" href="#galeria-bramy" data-otworz-kategorie="bramy">Zobacz realizacje→</a>
+        </article>
+
+        <article class="karta karta--szeroka">
+          <div>
+            <h3>Dachy — pokrycia i remonty</h3>
+            <p>jakiś tekst można też usunać</p>
+          </div>
+          <a class="btn btn--jasny" href="#kontakt">Zapytaj o dach</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REALIZACJE ============ -->
+  <section class="sekcja" id="realizacje" aria-labelledby="realizacje-tytul">
+    <div class="wrap">
+      <div class="sekcja__naglowek">
+        <div>
+          <p class="eyebrow">Realizacje</p>
+          <h2 id="realizacje-tytul">Z terenu, nie z katalogu.</h2>
+        </div>
+        <p class="lead">Zdjęcia wykonanych robót, według kategorii</p>
+      </div>
+
+      <!-- Tymczasowo te same trzy zdjęcia w każdej kategorii; przypisanie zatwierdzi klient. -->
+      <div class="realizacje">
+        <a class="kadr" id="galeria-modulowe" href="zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29%20%281%29.jpeg" data-kategoria="modulowe" data-nazwa="Ogrodzenia modułowe" data-zdjecia="[{&quot;src&quot;: &quot;zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29%20%281%29.jpeg&quot;, &quot;alt&quot;: &quot;Zdjęcie poglądowe 1 — przypisanie do kategorii do potwierdzenia&quot;}, {&quot;src&quot;: &quot;zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29.jpeg&quot;, &quot;alt&quot;: &quot;Zdjęcie poglądowe 2 — przypisanie do kategorii do potwierdzenia&quot;}, {&quot;src&quot;: &quot;zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.30%20%281%29.jpeg&quot;, &quot;alt&quot;: &quot;Zdjęcie poglądowe 3 — przypisanie do kategorii do potwierdzenia&quot;}]" aria-label="Otwórz galerię: Ogrodzenia modułowe, 3 zdjęcia">
+          <img src="zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29%20%281%29.jpeg" alt="" loading="lazy" decoding="async">
+          <span class="kadr__podpis"><strong>Ogrodzenia modułowe</strong><small>3 zdjęcia · Otwórz galerię</small></span>
+          <span class="kadr__otworz" aria-hidden="true">↗</span>
+        </a>
+        <a class="kadr" id="galeria-lupane" href="zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29%20%281%29.jpeg" data-kategoria="lupane" data-nazwa="Ogrodzenia łupane" data-zdjecia="[{&quot;src&quot;: &quot;zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29%20%281%29.jpeg&quot;, &quot;alt&quot;: &quot;Zdjęcie poglądowe 1 — przypisanie do kategorii do potwierdzenia&quot;}, {&quot;src&quot;: &quot;zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29.jpeg&quot;, &quot;alt&quot;: &quot;Zdjęcie poglądowe 2 — przypisanie do kategorii do potwierdzenia&quot;}, {&quot;src&quot;: &quot;zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.30%20%281%29.jpeg&quot;, &quot;alt&quot;: &quot;Zdjęcie poglądowe 3 — przypisanie do kategorii do potwierdzenia&quot;}]" aria-label="Otwórz galerię: Ogrodzenia łupane, 3 zdjęcia">
+          <img src="zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29%20%281%29.jpeg" alt="" loading="lazy" decoding="async">
+          <span class="kadr__podpis"><strong>Ogrodzenia łupane</strong><small>3 zdjęcia · Otwórz galerię</small></span>
+          <span class="kadr__otworz" aria-hidden="true">↗</span>
+        </a>
+        <a class="kadr" id="galeria-metalowe" href="zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29%20%281%29.jpeg" data-kategoria="metalowe" data-nazwa="Ogrodzenia metalowe" data-zdjecia="[{&quot;src&quot;: &quot;zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29%20%281%29.jpeg&quot;, &quot;alt&quot;: &quot;Zdjęcie poglądowe 1 — przypisanie do kategorii do potwierdzenia&quot;}, {&quot;src&quot;: &quot;zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29.jpeg&quot;, &quot;alt&quot;: &quot;Zdjęcie poglądowe 2 — przypisanie do kategorii do potwierdzenia&quot;}, {&quot;src&quot;: &quot;zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.30%20%281%29.jpeg&quot;, &quot;alt&quot;: &quot;Zdjęcie poglądowe 3 — przypisanie do kategorii do potwierdzenia&quot;}]" aria-label="Otwórz galerię: Ogrodzenia metalowe, 3 zdjęcia">
+          <img src="zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29%20%281%29.jpeg" alt="" loading="lazy" decoding="async">
+          <span class="kadr__podpis"><strong>Ogrodzenia metalowe</strong><small>3 zdjęcia · Otwórz galerię</small></span>
+          <span class="kadr__otworz" aria-hidden="true">↗</span>
+        </a>
+        <a class="kadr" id="galeria-bramy" href="zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29%20%281%29.jpeg" data-kategoria="bramy" data-nazwa="Bramy garażowe" data-zdjecia="[{&quot;src&quot;: &quot;zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29%20%281%29.jpeg&quot;, &quot;alt&quot;: &quot;Zdjęcie poglądowe 1 — przypisanie do kategorii do potwierdzenia&quot;}, {&quot;src&quot;: &quot;zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29.jpeg&quot;, &quot;alt&quot;: &quot;Zdjęcie poglądowe 2 — przypisanie do kategorii do potwierdzenia&quot;}, {&quot;src&quot;: &quot;zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.30%20%281%29.jpeg&quot;, &quot;alt&quot;: &quot;Zdjęcie poglądowe 3 — przypisanie do kategorii do potwierdzenia&quot;}]" aria-label="Otwórz galerię: Bramy garażowe, 3 zdjęcia">
+          <img src="zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.29%20%281%29.jpeg" alt="" loading="lazy" decoding="async">
+          <span class="kadr__podpis"><strong>Bramy garażowe</strong><small>3 zdjęcia · Otwórz galerię</small></span>
+          <span class="kadr__otworz" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCES ============ -->
+  <section class="sekcja sekcja--ciemna" id="proces" aria-labelledby="proces-tytul">
+    <div class="wrap">
+      <div class="sekcja__naglowek">
+        <div>
+          <p class="eyebrow eyebrow--jasny">Jak pracujemy</p>
+          <h2 id="proces-tytul">Cztery kroki, do pięknego ogrodzenia.</h2>
+        </div>
+      </div>
+
+      <div class="proces">
+        <ol class="kroki">
+          <li class="krok">
+            <span class="krok__num" aria-hidden="true"></span>
+            <h3>Telefon i pomiar</h3>
+            <p>Przyjeżdżamy na miejsce, mierzymy, słuchamy i doradzamy.</p>
+          </li>
+          <li class="krok">
+            <span class="krok__num" aria-hidden="true"></span>
+            <h3>Wycena</h3>
+            <p>Materiał i montaż w jednej kwocie. Wiesz, za co płacisz, zanim cokolwiek zamówimy.</p>
+          </li>
+          <li class="krok">
+            <span class="krok__num" aria-hidden="true"></span>
+            <h3>Zamówienie u producenta</h3>
+            <p>Elementy na wymiar od najlepszych producentów  JONIEC, JARMEX lub BUDMAT.</p>
+          </li>
+          <li class="krok">
+            <span class="krok__num" aria-hidden="true"></span>
+            <h3>Montaż i odbiór</h3>
+            <p>Montujemy własną ekipą, sprzątamy po sobie i można wieszać pranie.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DLACZEGO MY ============ -->
+  <section class="sekcja sekcja--ciemna" aria-labelledby="dlaczego-tytul">
+    <div class="wrap">
+      <div class="sekcja__naglowek">
+        <div>
+          <p class="eyebrow eyebrow--jasny">Dlaczego my</p>
+          <h2 id="dlaczego-tytul">Trzy powody, żeby zadzwonić właśnie tutaj.</h2>
+        </div>
+      </div>
+      <div class="dlaczego">
+        <div>
+          <h3>Własna ekipa</h3>
+          <p>Nie wystawiamy roboty podwykonawcy, którego nie znasz. Za montaż odpowiada ta sama osoba, która mierzyła.</p>
+        </div>
+        <div>
+          <h3>Materiał, nie „materiał”</h3>
+          <p>JONIEC, JARMEX i BUDMAT to nie katalog ozdób. To systemy z kartą techniczną i dostępnymi częściami.</p>
+        </div>
+
+        <div>
+          <h3>Znajomość terenu</h3>
+          <p>Wiatr, mróz, spadki i kamień pod łopatą. Wiemy, gdzie trzeba głębiej i gdzie trzeba inaczej.</p>
+        </div>
+        <div>
+          <h3>coś innego</h3>
+          <p>można dodać więcej punktów.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KONTAKT ============ -->
+  <section class="sekcja sekcja--mgla" id="kontakt" aria-labelledby="kontakt-tytul">
+    <div class="wrap kontakt">
+      <div>
+        <p class="eyebrow">Bezpłatny pomiar</p>
+        <h2 id="kontakt-tytul">Powiedz, co ma stanąć <br>resztę zrobimy my.</h2>
+
+        <div class="kontakt__dane">
+          <a href="tel:+48575228298">123456789</a>
+          <a href="mailto:gorka-ogrodzenia@wp.pl">gorka-ogrodzenia@wp.pl</a>
+          <address>
+            GÓRKA — Dachy, Bramy, Ogrodzenia<br>
+            adres biura
+          </address>
+          <a href="https://maps.app.goo.gl/5qg1jCLDBjKusZuU9" target="_blank" rel="noopener">
+            Pokaż na mapie →
+          </a>
+        </div>
+      </div>
+
+      <form class="formularz" id="formularz" novalidate>
+        <div class="pola">
+          <div class="pole">
+            <label for="imie">Imię</label>
+            <input id="imie" name="imie" type="text" autocomplete="given-name" required>
+          </div>
+          <div class="pole">
+            <label for="telefon">Telefon</label>
+            <input id="telefon" name="telefon" type="tel" inputmode="tel" autocomplete="tel" placeholder="np. 600 100 200" required>
+          </div>
+          <div class="pole">
+            <label for="miejscowosc">Miejscowość</label>
+            <input id="miejscowosc" name="miejscowosc" type="text" autocomplete="address-level2">
+          </div>
+          <div class="pole">
+            <label for="zakres">Czego dotyczy</label>
+            <select id="zakres" name="zakres">
+              <option>Ogrodzenie modułowe</option>
+              <option>Ogrodzenie łupane</option>
+              <option>Ogrodzenie metalowe</option>
+              <option>Brama garażowa</option>
+              <option>Dach</option>
+              <option>Inne / nie wiem</option>
+            </select>
+          </div>
+          <div class="pole pole--pelne">
+            <label for="wiadomosc">Długość, teren, termin — ile wiesz</label>
+            <textarea id="wiadomosc" name="wiadomosc" placeholder="Np. 40 m, działka na spadku, chcę zamknąć do wiosny."></textarea>
+          </div>
+        </div>
+        <div class="formularz__stopka">
+          <button class="btn btn--glowny" type="submit">Wyślij i zamów pomiar</button>
+          <p class="formularz__nota">Zapytanie trafia prosto do naszego systemu — oddzwaniamy w dniu roboczym.
+          Dane używamy tylko do kontaktu w sprawie wyceny.</p>
+        </div>
+        <p class="formularz__status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<dialog class="galeria-dialog" aria-label="Galeria realizacji">
+  <div class="galeria-dialog__pasek">
+    <span class="galeria-dialog__licznik" aria-live="polite"></span>
+    <button type="button" data-zamknij autofocus aria-label="Zamknij galerię">Zamknij ×</button>
+  </div>
+  <img class="galeria-dialog__obraz" alt="">
+  <div class="galeria-dialog__nawigacja">
+    <button type="button" data-poprzednie aria-label="Poprzednie zdjęcie">←</button>
+    <button type="button" data-nastepne aria-label="Następne zdjęcie">→</button>
+  </div>
+</dialog>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div class="stopka__in">
+      <div>
+        <span class="logo">
+          <img class="logo__obraz" src="logo-gorka-biale.png" alt="Górka Ogrodzenia" width="266" height="99" loading="lazy">
+        </span>
+        <p style="margin-top:16px;font-size:.9rem;max-width:32ch">
+          Ogrodzenia, bramy i dachy na Podhalu. Pomiar, wycena i montaż własną ekipą, od 2015 roku.
+        </p>
+      </div>
+      <div>
+        <h4>Oferta</h4>
+        <ul>
+          <li><a href="#oferta">Ogrodzenia modułowe</a></li>
+          <li><a href="#oferta">Ogrodzenia łupane</a></li>
+          <li><a href="#oferta">Ogrodzenia metalowe</a></li>
+          <li><a href="#oferta">Bramy garażowe</a></li>
+          <li><a href="#oferta">Dachy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Firma</h4>
+        <ul>
+          <li><a href="#realizacje">Realizacje</a></li>
+          <li><a href="#proces">Jak pracujemy</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+48575228298">1234567</a></li>
+          <li><a href="mailto:gorka-ogrodzenia@wp.pl">gorka-ogrodzenia@wp.pl</a></li>
+          <li>adres</li>
+        </ul>
+      </div>
+    </div>
+    <div class="stopka__dol">
+      <span>© 2026 GÓRKA — Dachy, Bramy, Ogrodzenia</span>
+      <span>Projekt wstępny · mockup</span>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"HomeAndConstructionBusiness",
+  "name":"GÓRKA — Dachy, Bramy, Ogrodzenia",
+  "description":"Ogrodzenia modułowe, łupane i metalowe, bramy garażowe oraz dachy. Pomiar, wycena i montaż na Podhalu.",
+  "telephone":"+48575228298",
+  "email":"gorka-ogrodzenia@wp.pl",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"ul. Potok Bryjów 6",
+    "postalCode":"34-532",
+    "addressLocality":"Rzepiska",
+    "addressRegion":"małopolskie",
+    "addressCountry":"PL"
+  },
+  "areaServed":["Rzepiska","Bukowina Tatrzańska","Zakopane","Nowy Targ","Białka Tatrzańska","Podhale"],
+  "foundingDate":"2015",
+  "priceRange":"$$"
+}
+</script>
+
+<script>
+(function(){
+  var przycisk = document.querySelector('.menu-btn');
+  var menu = document.getElementById('menu');
+  if(przycisk && menu){
+    przycisk.addEventListener('click', function(){
+      var otwarte = menu.getAttribute('data-otwarte') === 'tak';
+      menu.setAttribute('data-otwarte', otwarte ? 'nie' : 'tak');
+      przycisk.setAttribute('aria-expanded', otwarte ? 'false' : 'true');
+    });
+    menu.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        menu.setAttribute('data-otwarte','nie');
+        przycisk.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var kategorie = Array.from(document.querySelectorAll('[data-kategoria]'));
+  var zdjecia = [];
+  var nazwaKategorii = '';
+  var dialog = document.querySelector('.galeria-dialog');
+  var aktywne = 0;
+  var powrot = null;
+  function pokazZdjecie(index){
+    aktywne = (index + zdjecia.length) % zdjecia.length;
+    var obraz = dialog.querySelector('.galeria-dialog__obraz');
+    obraz.src = zdjecia[aktywne].src;
+    obraz.alt = zdjecia[aktywne].alt;
+    dialog.querySelector('.galeria-dialog__licznik').textContent = nazwaKategorii + ' · ' + (aktywne + 1) + ' / ' + zdjecia.length;
+  }
+  function otworzKategorie(e, link, kategoria){
+    if(e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || typeof dialog.showModal !== 'function') return;
+    e.preventDefault();
+    powrot = link;
+    zdjecia = JSON.parse(kategoria.dataset.zdjecia);
+    nazwaKategorii = kategoria.dataset.nazwa;
+    pokazZdjecie(0);
+    dialog.showModal();
+    document.documentElement.classList.add('galeria-otwarta');
+  }
+  kategorie.forEach(function(link){
+    link.addEventListener('click',function(e){otworzKategorie(e,link,link);});
+  });
+  document.querySelectorAll('[data-otworz-kategorie]').forEach(function(link){
+    link.addEventListener('click',function(e){
+      var kategoria = kategorie.find(function(k){return k.dataset.kategoria === link.dataset.otworzKategorie;});
+      if(kategoria) otworzKategorie(e,link,kategoria);
+    });
+  });
+  dialog.querySelector('[data-zamknij]').addEventListener('click',function(){dialog.close();});
+  dialog.querySelector('[data-poprzednie]').addEventListener('click',function(){pokazZdjecie(aktywne-1);});
+  dialog.querySelector('[data-nastepne]').addEventListener('click',function(){pokazZdjecie(aktywne+1);});
+  dialog.addEventListener('keydown',function(e){
+    if(e.key === 'ArrowLeft'){e.preventDefault();pokazZdjecie(aktywne-1);}
+    if(e.key === 'ArrowRight'){e.preventDefault();pokazZdjecie(aktywne+1);}
+  });
+  dialog.addEventListener('click',function(e){
+    var rect = dialog.getBoundingClientRect();
+    if(e.target === dialog && (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom)) dialog.close();
+  });
+  dialog.addEventListener('close',function(){
+    document.documentElement.classList.remove('galeria-otwarta');
+    if(powrot) powrot.focus();
+  });
+
+  var form = document.getElementById('formularz');
+  var status = form ? form.querySelector('.formularz__status') : null;
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var imie = form.imie.value.trim();
+      var tel = form.telefon.value.trim();
+      if(imie.length < 2 || tel.replace(/\D/g,'').length < 9){
+        status.textContent = 'Podaj imię i numer telefonu — bez tego nie oddzwonimy.';
+        status.style.color = '#8C5527';
+        return;
+      }
+      // MOCKUP: docelowo POST /api/zapytania → zlecenie ze statusem "nowe" w CRM.
+      status.textContent = 'Dzięki, ' + imie + '. W wersji produkcyjnej to zapytanie tworzy zlecenie w CRM.';
+      status.style.color = '';
+      form.reset();
+    });
+  }
+})();
+</script>
+</body>
+</html>
