@@ -67,7 +67,7 @@ p{margin:0}
 
 /* ---------- typografia pomocnicza ---------- */
 .eyebrow{
-  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;
   font-weight:500;color:var(--jodla);
 }
 .eyebrow--jasny{color:var(--niebo)}
@@ -150,7 +150,7 @@ p{margin:0}
 .menu[data-otwarte="tak"]{display:block}
 .menu ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
 .menu a{display:block;padding:13px 4px;text-decoration:none;border-bottom:1px solid rgba(22,33,28,.09);font-size:1.02rem}
-@media (min-width:960px){
+@media (min-width:1200px){
   .nav,.header__cta{display:flex}
   .menu-btn{display:none}
   .header__cta{margin-left:0}
@@ -173,7 +173,7 @@ section[id]{scroll-margin-top:120px}
 .hero__tytul em{font-style:italic;color:var(--jodla)}
 .hero__lead{margin-top:26px}
 .hero__akcje{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(100%,480px);gap:10px;margin-top:28px}
-.hero__akcje .btn{justify-content:center;text-align:center;padding:10px 12px;min-height:48px;font-size:.84rem;line-height:1.3}
+.hero__akcje .btn{justify-content:center;text-align:center;padding:10px 12px;min-height:48px;font-size:.9375rem;line-height:1.4}
 .hero__akcje .btn--glowny{background:#AD4945;color:#fff}
 .hero__akcje .btn--glowny:hover{background:#923B38}
 @media(max-width:600px){.hero__akcje{grid-template-columns:1fr;width:min(100%,240px)}}
@@ -184,7 +184,7 @@ section[id]{scroll-margin-top:120px}
 }
 .hero__fakt{max-width:24ch}
 .hero__fakt strong{display:block;font-family:var(--f-head);font-size:1.05rem;font-weight:600}
-.hero__fakt span{font-size:.86rem;color:#4B5A52}
+.hero__fakt span{font-size:1rem;color:#3C4A42}
 
 /* ---------- pasek marek ---------- */
 .marki{background:var(--las);color:var(--mgla);padding-block:clamp(26px,3.4vw,40px)}
@@ -224,9 +224,9 @@ section[id]{scroll-margin-top:120px}
 }
 .karta__ikona svg{width:28px;height:28px}
 .karta h3{margin-top:2px}
-.karta p{font-size:.94rem;color:#4B5A52}
+.karta p{font-size:1rem;color:#3C4A42}
 .karta__link{
-  margin-top:auto;padding-top:10px;font-size:.88rem;text-decoration:none;
+  margin-top:auto;padding-top:10px;font-size:1rem;text-decoration:none;
   color:var(--modrzew-ciemny);font-weight:500;
 }
 .karta__link:hover{text-decoration:underline}
@@ -264,7 +264,7 @@ section[id]{scroll-margin-top:120px}
 }
 .krok__num::before{content:counter(krok)}
 .krok h3{font-size:1.1rem}
-.krok p{margin-top:8px;font-size:.93rem;color:#4B5A52}
+.krok p{margin-top:8px;font-size:1rem;color:#3C4A42}
 .sekcja--ciemna .krok__num{background:transparent;border-color:rgba(241,236,226,.28);color:var(--niebo)}
 .sekcja--ciemna .krok p{color:#B9C7BF}
 
@@ -292,7 +292,7 @@ html.galeria-otwarta{overflow:hidden}
   grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
 .dlaczego > div{border-top:1px solid rgba(241,236,226,.2);padding-top:18px}
 .dlaczego h3{color:var(--mgla);font-size:1.08rem}
-.dlaczego p{margin-top:8px;font-size:.93rem;color:#B9C7BF}
+.dlaczego p{margin-top:8px;font-size:1rem;color:#D3DDD6}
 
 /* ---------- formularz ---------- */
 .kontakt{display:grid;gap:clamp(30px,4vw,60px);grid-template-columns:1fr;align-items:start}
@@ -304,9 +304,9 @@ html.galeria-otwarta{overflow:hidden}
 .pola{display:grid;gap:16px;grid-template-columns:1fr}
 @media (min-width:640px){.pola{grid-template-columns:1fr 1fr}.pole--pelne{grid-column:1/-1}}
 .pole{display:flex;flex-direction:column;gap:7px}
-.pole label{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--jodla);font-weight:500}
+.pole label{font-size:.9375rem;letter-spacing:.02em;color:var(--jodla);font-weight:500}
 .pole input,.pole select,.pole textarea{
-  font:inherit;font-size:.98rem;color:var(--grafit);
+  font:inherit;font-size:1rem;color:var(--grafit);
   background:#fff;border:1px solid rgba(22,33,28,.16);
   border-radius:18px;padding:.85em 1em;width:100%;
 }
@@ -316,12 +316,12 @@ html.galeria-otwarta{overflow:hidden}
   box-shadow:0 0 0 4px rgba(44,91,72,.13);
 }
 .formularz__stopka{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:22px}
-.formularz__nota{font-size:.78rem;color:#66746D;max-width:38ch}
+.formularz__nota{font-size:.9rem;color:#4B5A52;max-width:38ch}
 .formularz__status{font-size:.9rem;color:var(--jodla);margin-top:14px;min-height:1.4em}
 .kontakt__dane{display:grid;gap:14px;margin-top:26px}
 .kontakt__dane a{text-decoration:none;font-family:var(--f-head);font-size:clamp(1.1rem,1.6vw,1.35rem)}
 .kontakt__dane a:hover{color:var(--modrzew-ciemny)}
-.kontakt__dane address{font-style:normal;color:#44524A;font-size:.96rem;line-height:1.7}
+.kontakt__dane address{font-style:normal;color:#44524A;font-size:1rem;line-height:1.7}
 
 /* ---------- stopka ---------- */
 .stopka{background:var(--las);color:#B9C7BF;padding-block:clamp(38px,5vw,64px)}
@@ -338,6 +338,65 @@ html.galeria-otwarta{overflow:hidden}
   display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;
   font-size:.8rem;color:#93A79C;
 }
+
+/* Opinie: podgląd układu. Oceny i liczby opinii wymagają potwierdzenia. */
+.opinie{margin-top:24px}
+.opinie__linki{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.opinia{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:14px 16px;border:1px solid #C8C2B6;border-radius:20px;text-decoration:none;background:var(--mgla);min-width:0}
+.opinia:hover{border-color:var(--jodla);background:#fff}
+.opinia strong{font-size:1rem}
+.opinia__gwiazdki{font-size:1.3rem;letter-spacing:.08em;color:#85601D;line-height:1.3}
+.opinia__status{font-size:.875rem;color:#4B5A52}
+.opinie__nota{margin-top:8px;font-size:.875rem;color:#4B5A52;line-height:1.5}
+.telefon-mobile{display:none}
+@media(max-width:959px){
+  body{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  html{scroll-padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))}
+  .telefon-mobile{position:fixed;z-index:60;left:16px;right:16px;bottom:calc(12px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 20px;border-radius:999px;background:var(--las);color:#fff;text-decoration:none;font-size:1rem;font-weight:600;box-shadow:0 4px 20px #12261D40}
+  .telefon-mobile svg{width:22px;height:22px;flex:none}
+  .telefon-mobile:hover{background:var(--jodla)}
+}
+@media(max-width:360px){.opinie__linki{grid-template-columns:1fr}}
+
+/* Katalog: wszystkie kategorie dostępne także bez JavaScriptu. */
+[hidden]{display:none!important}
+.makieta-nota{font-size:.875rem;color:#4B5A52;line-height:1.6;margin-top:18px;max-width:75ch}
+.katalog{display:grid;gap:24px;margin-top:28px;align-items:start}
+.katalog__kategorie{display:grid;gap:6px}
+.katalog__zakladka{display:block;padding:12px 16px;border:1px solid #C8C2B6;border-radius:16px;text-decoration:none;font-size:.9375rem;line-height:1.45;background:var(--mgla)}
+.katalog__zakladka:hover{border-color:var(--jodla)}
+.katalog__zakladka[aria-selected="true"]{background:var(--las);color:var(--mgla);border-color:var(--las);font-weight:600}
+.katalog__panel{scroll-margin-top:120px}
+.katalog__panel + .katalog__panel{margin-top:32px}
+.katalog--aktywny .katalog__panel{margin-top:0}
+.katalog__panel > h3{font-size:clamp(1.45rem,2.2vw,2rem);margin-bottom:20px;line-height:1.2}
+.produkty{display:grid;gap:16px;grid-template-columns:1fr}
+.produkt{padding:18px;gap:14px;min-width:0}
+.produkt__zdjecie{display:grid;place-content:center;justify-items:center;gap:8px;aspect-ratio:4/3;border:1px dashed #A5B1A8;border-radius:20px;background:var(--kamien);color:#4B5A52;font-size:.875rem;text-align:center;padding:12px}
+.produkt__zdjecie > span:first-child{font-size:1.6rem;color:var(--jodla)}
+.produkt h4{font-family:var(--f-head);font-weight:500;font-size:1.35rem;line-height:1.2;margin:0}
+.produkt p.produkt__opis,.produkt__opis{font-size:.9375rem;color:#4B5A52}
+.produkt .karta__link{padding-block:10px;line-height:1.5}
+.oferta__dalej{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin-top:30px}
+.oferta__dalej p{font-size:.875rem;max-width:46ch;color:#4B5A52}
+.oferta--dodatkowa{padding-top:28px;border-top:1px solid #C8C2B6}
+.b2b__nota{margin-top:18px}
+.formularz{scroll-margin-top:120px}
+.formularz > .makieta-nota{margin-bottom:24px}
+.pole small{font-size:.8125rem;color:#4B5A52;line-height:1.5}
+@media(min-width:720px){.produkty{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1100px){
+  .katalog{grid-template-columns:250px minmax(0,1fr);gap:28px}
+  .produkty{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:1099px){
+  .katalog--aktywny .katalog__kategorie{display:flex;overflow-x:auto;gap:8px;padding:4px 4px 14px;scroll-snap-type:x proximity}
+  .katalog--aktywny .katalog__zakladka{flex:0 0 auto;max-width:230px;scroll-snap-align:start}
+}
+@media(max-width:600px){
+  .opinie__linki{display:flex;overflow-x:auto;gap:12px;padding:4px 4px 12px;scroll-snap-type:x proximity}
+  .opinia{flex:0 0 85%;scroll-snap-align:start}
+}
 </style>
 </head>
 <body>
@@ -353,13 +412,15 @@ html.galeria-otwarta{overflow:hidden}
     <nav class="nav" aria-label="Nawigacja główna">
       <a href="#oferta">Oferta</a>
       <a href="#realizacje">Realizacje</a>
-      <a href="#proces">Jak pracujemy</a>
+      <a href="#b2b">Współpraca B2B</a>
+      <a href="#o-nas">O nas</a>
       <a href="#kontakt">Kontakt</a>
+      <a href="#formularz">Bezpłatna wycena</a>
     </nav>
 
     <div class="header__cta">
-      <a class="header__tel" href="tel:+4812345">
-        <span aria-hidden="true">☎</span> 12345
+      <a class="header__tel" href="tel:+48575228298">
+        <span aria-hidden="true">☎</span> 575 228 298
       </a>
     </div>
 
@@ -371,9 +432,10 @@ html.galeria-otwarta{overflow:hidden}
     <ul>
       <li><a href="#oferta">Oferta</a></li>
       <li><a href="#realizacje">Realizacje</a></li>
-      <li><a href="#proces">Jak pracujemy</a></li>
+      <li><a href="#b2b">Współpraca B2B</a></li>
+      <li><a href="#o-nas">O nas</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
-      <li><a href="tel:+48575228298">Zadzwoń: 123458</a></li>
+      <li><a href="#formularz">Bezpłatna wycena</a></li>
     </ul>
   </div>
 </header>
@@ -394,6 +456,21 @@ html.galeria-otwarta{overflow:hidden}
         <a class="btn btn--glowny" href="#kontakt">Zamów bezpłatny pomiar</a>
         <a class="btn btn--obrys" href="#realizacje">Zobacz realizacje</a>
       </div>
+      <aside class="opinie" aria-label="Opinie o firmie">
+        <div class="opinie__linki">
+          <a class="opinia" href="https://maps.app.goo.gl/5qg1jCLDBjKusZuU9" target="_blank" rel="noopener" aria-label="Sprawdź opinie o firmie w Google — otwiera nową kartę">
+            <strong>Opinie Google ↗</strong>
+            <span class="opinia__gwiazdki" aria-hidden="true">☆☆☆☆☆</span>
+            <span class="opinia__status">Ocena do uzupełnienia</span>
+          </a>
+          <a class="opinia" href="https://www.facebook.com/profile.php?id=100063507609259" target="_blank" rel="noopener" aria-label="Sprawdź opinie o firmie na Facebooku — otwiera nową kartę">
+            <strong>Opinie Facebook ↗</strong>
+            <span class="opinia__gwiazdki" aria-hidden="true">☆☆☆☆☆</span>
+            <span class="opinia__status">Ocena do uzupełnienia</span>
+          </a>
+        </div>
+        <p class="opinie__nota">Podgląd: oceny i liczby opinii zostaną uzupełnione po potwierdzeniu danych z profili firmy.</p>
+      </aside>
 
       </div>
       <!-- Tymczasowe zdjęcie główne; docelowy wybór po stronie klienta. -->
@@ -436,68 +513,161 @@ html.galeria-otwarta{overflow:hidden}
       <div class="sekcja__naglowek">
         <div>
           <p class="eyebrow">Oferta</p>
-          <h2 id="oferta-tytul">Cztery rzeczy robimy które robimy najlepiej.</h2>
+          <h2 id="oferta-tytul">Wybierz ogrodzenie dla siebie.</h2>
         </div>
-        <p class="lead">Doradzamy materiał pod konkretne miejsce: spadek terenu, wiatr, sąsiedztwo,
-        to, czy za ogrodzeniem ma być spokój, czy reprezentacja.</p>
+        <p class="lead">Wybierz kategorię i zobacz dostępne pozycje. O wybrany produkt możesz zapytać w formularzu wyceny.</p>
       </div>
-
-      <div class="oferta">
+      <p class="makieta-nota">Podgląd oferty: zdjęcia i opisy są do uzupełnienia. Zakres akcesoriów i chemii wymaga potwierdzenia.</p>
+      <div class="katalog">
+        <nav class="katalog__kategorie" aria-label="Kategorie oferty">
+          <a class="katalog__zakladka" id="zakladka-variante" href="#oferta-variante">Ogrodzenia Variante</a>
+          <a class="katalog__zakladka" id="zakladka-valor" href="#oferta-valor">Ogrodzenia nieprzezierne VALOR</a>
+          <a class="katalog__zakladka" id="zakladka-metalowe" href="#oferta-metalowe">Ogrodzenia metalowe</a>
+          <a class="katalog__zakladka" id="zakladka-aluminiowe" href="#oferta-aluminiowe">Ogrodzenia aluminiowe</a>
+          <a class="katalog__zakladka" id="zakladka-bloczki" href="#oferta-bloczki">Bloczki ozdobne</a>
+          <a class="katalog__zakladka" id="zakladka-sztachety" href="#oferta-sztachety">Sztachety metalowe</a>
+          <a class="katalog__zakladka" id="zakladka-panelowe" href="#oferta-panelowe">Ogrodzenia panelowe</a>
+          <a class="katalog__zakladka" id="zakladka-akcesoria" href="#oferta-akcesoria">Akcesoria / chemia</a>
+          <a class="katalog__zakladka" id="zakladka-nietypowe" href="#oferta-nietypowe">Zamówienia nietypowe</a>
+        </nav>
+        <div class="katalog__panele">
+          <section class="katalog__panel" id="oferta-variante" aria-labelledby="naglowek-variante">
+            <h3 id="naglowek-variante">Ogrodzenia Variante</h3>
+            <div class="produkty">
+              <article class="karta produkt">
+                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <h4>Primo</h4>
+                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <a class="karta__link" href="#formularz" data-wycena-kategoria="variante" data-wycena-produkt="Primo">Zapytaj o wycenę →</a>
+              </article>
+              <article class="karta produkt">
+                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <h4>Piano</h4>
+                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <a class="karta__link" href="#formularz" data-wycena-kategoria="variante" data-wycena-produkt="Piano">Zapytaj o wycenę →</a>
+              </article>
+              <article class="karta produkt">
+                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <h4>Perfetto</h4>
+                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <a class="karta__link" href="#formularz" data-wycena-kategoria="variante" data-wycena-produkt="Perfetto">Zapytaj o wycenę →</a>
+              </article>
+            </div>
+          </section>
+          <section class="katalog__panel" id="oferta-valor" aria-labelledby="naglowek-valor">
+            <h3 id="naglowek-valor">Ogrodzenia nieprzezierne VALOR</h3>
+            <div class="produkty">
+              <article class="karta produkt">
+                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <h4>VALOR</h4>
+                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <a class="karta__link" href="#formularz" data-wycena-kategoria="valor" data-wycena-produkt="VALOR">Zapytaj o wycenę →</a>
+              </article>
+            </div>
+          </section>
+          <section class="katalog__panel" id="oferta-metalowe" aria-labelledby="naglowek-metalowe">
+            <h3 id="naglowek-metalowe">Ogrodzenia metalowe</h3>
+            <div class="produkty">
+              <article class="karta produkt">
+                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <h4>Emima</h4>
+                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <a class="karta__link" href="#formularz" data-wycena-kategoria="metalowe" data-wycena-produkt="Emima">Zapytaj o wycenę →</a>
+              </article>
+            </div>
+          </section>
+          <section class="katalog__panel" id="oferta-aluminiowe" aria-labelledby="naglowek-aluminiowe">
+            <h3 id="naglowek-aluminiowe">Ogrodzenia aluminiowe</h3>
+            <div class="produkty">
+              <article class="karta produkt">
+                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <h4>Ogrodzenia aluminiowe</h4>
+                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <a class="karta__link" href="#formularz" data-wycena-kategoria="aluminiowe" data-wycena-produkt="Ogrodzenia aluminiowe">Zapytaj o wycenę →</a>
+              </article>
+            </div>
+          </section>
+          <section class="katalog__panel" id="oferta-bloczki" aria-labelledby="naglowek-bloczki">
+            <h3 id="naglowek-bloczki">Bloczki ozdobne</h3>
+            <div class="produkty">
+              <article class="karta produkt">
+                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <h4>Joniec</h4>
+                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <a class="karta__link" href="#formularz" data-wycena-kategoria="bloczki" data-wycena-produkt="Joniec">Zapytaj o wycenę →</a>
+              </article>
+              <article class="karta produkt">
+                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <h4>Bruk-bet</h4>
+                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <a class="karta__link" href="#formularz" data-wycena-kategoria="bloczki" data-wycena-produkt="Bruk-bet">Zapytaj o wycenę →</a>
+              </article>
+              <article class="karta produkt">
+                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <h4>Konekt</h4>
+                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <a class="karta__link" href="#formularz" data-wycena-kategoria="bloczki" data-wycena-produkt="Konekt">Zapytaj o wycenę →</a>
+              </article>
+            </div>
+          </section>
+          <section class="katalog__panel" id="oferta-sztachety" aria-labelledby="naglowek-sztachety">
+            <h3 id="naglowek-sztachety">Sztachety metalowe</h3>
+            <div class="produkty">
+              <article class="karta produkt">
+                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <h4>Sztachety metalowe</h4>
+                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <a class="karta__link" href="#formularz" data-wycena-kategoria="sztachety" data-wycena-produkt="Sztachety metalowe">Zapytaj o wycenę →</a>
+              </article>
+            </div>
+          </section>
+          <section class="katalog__panel" id="oferta-panelowe" aria-labelledby="naglowek-panelowe">
+            <h3 id="naglowek-panelowe">Ogrodzenia panelowe</h3>
+            <div class="produkty">
+              <article class="karta produkt">
+                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <h4>Ogrodzenia panelowe</h4>
+                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <a class="karta__link" href="#formularz" data-wycena-kategoria="panelowe" data-wycena-produkt="Ogrodzenia panelowe">Zapytaj o wycenę →</a>
+              </article>
+            </div>
+          </section>
+          <section class="katalog__panel" id="oferta-akcesoria" aria-labelledby="naglowek-akcesoria">
+            <h3 id="naglowek-akcesoria">Akcesoria / chemia</h3>
+            <p class="makieta-nota">Kategoria robocza — obecność i asortyment do potwierdzenia.</p>
+            <div class="produkty">
+              <article class="karta produkt">
+                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <h4>Akcesoria / chemia</h4>
+                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <a class="karta__link" href="#formularz" data-wycena-kategoria="akcesoria" data-wycena-produkt="Akcesoria / chemia">Zapytaj o wycenę →</a>
+              </article>
+            </div>
+          </section>
+          <section class="katalog__panel" id="oferta-nietypowe" aria-labelledby="naglowek-nietypowe">
+            <h3 id="naglowek-nietypowe">Zamówienia nietypowe</h3>
+            <div class="produkty">
+              <article class="karta produkt">
+                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <h4>Zamówienia nietypowe</h4>
+                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <a class="karta__link" href="#formularz" data-wycena-kategoria="nietypowe" data-wycena-produkt="Zamówienia nietypowe">Zapytaj o wycenę →</a>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="oferta__dalej"><a class="btn btn--obrys" href="#realizacje">Zobacz nasze realizacje →</a><p>Galeria inspiracji — przypisanie zdjęć do produktów jest jeszcze do ustalenia.</p></div>
+      <div class="oferta oferta--dodatkowa" aria-label="Pozostała oferta">
         <article class="karta">
-          <span class="karta__ikona" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <rect x="3" y="7" width="4" height="12" rx="1.4"/><rect x="10" y="7" width="4" height="12" rx="1.4"/>
-              <rect x="17" y="7" width="4" height="12" rx="1.4"/><path d="M3 4.5h18"/>
-            </svg>
-          </span>
-          <h3>Ogrodzenia modułowe</h3>
-          <p>Prefabrykowane przęsła i podmurówki JONIEC. Powtarzalny wymiar, szybki montaż, pewny termin.</p>
-          <a class="karta__link" href="#kontakt">Zapytaj o wycenę →</a>
-          <a class="karta__link" href="#galeria-modulowe" data-otworz-kategorie="modulowe">Zobacz realizacje→</a>
-        </article>
-
-        <article class="karta">
-          <span class="karta__ikona" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <path d="M4 20V8l4-3 4 3v12"/><path d="M12 20V10l4-2 4 2v10"/><path d="M3 20h18"/>
-            </svg>
-          </span>
-          <h3>Ogrodzenia łupane</h3>
-          <p>Kamień łupany — ciężki, cichy i miejscowy. Dobrze znosi mróz i halny, starzeje się bez wstydu.</p>
-          <a class="karta__link" href="#kontakt">Zapytaj o wycenę →</a>
-          <a class="karta__link" href="#galeria-lupane" data-otworz-kategorie="lupane">Zobacz realizacje→</a>
-        </article>
-
-        <article class="karta">
-          <span class="karta__ikona" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <path d="M6 3v18M12 3v18M18 3v18"/><path d="M3 7.5h18M3 16.5h18"/>
-            </svg>
-          </span>
-          <h3>Ogrodzenia metalowe</h3>
-          <p>Sztachety i panele BUDMAT — nowoczesna linia, dowolny kolor z palety RAL, furtki i bramy w tym samym systemie.</p>
-          <a class="karta__link" href="#kontakt">Zapytaj o wycenę →</a>
-          <a class="karta__link" href="#galeria-metalowe" data-otworz-kategorie="metalowe">Zobacz realizacje→</a>
-        </article>
-
-        <article class="karta">
-          <span class="karta__ikona" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-              <path d="M3 6.5h18v11H3z"/><path d="M3 12h18"/><path d="M9 6.5v11"/>
-            </svg>
-          </span>
           <h3>Bramy garażowe</h3>
           <p>Segmentowe i uchylne, z automatyką i pilotem. Pomiar i montaż w jednym terminie.</p>
-          <a class="karta__link" href="#kontakt">Zapytaj o wycenę →</a>
-          <a class="karta__link" href="#galeria-bramy" data-otworz-kategorie="bramy">Zobacz realizacje→</a>
+          <a class="karta__link" href="#formularz" data-wycena-kategoria="bramy" data-wycena-produkt="">Zapytaj o wycenę →</a>
         </article>
-
-        <article class="karta karta--szeroka">
-          <div>
-            <h3>Dachy — pokrycia i remonty</h3>
-            <p>jakiś tekst można też usunać</p>
-          </div>
-          <a class="btn btn--jasny" href="#kontakt">Zapytaj o dach</a>
+        <article class="karta">
+          <h3>Dachy — pokrycia i remonty</h3>
+          <p class="produkt__opis">Opis do uzupełnienia.</p>
+          <a class="karta__link" href="#formularz" data-wycena-kategoria="dachy" data-wycena-produkt="">Zapytaj o dach →</a>
         </article>
       </div>
     </div>
@@ -512,6 +682,7 @@ html.galeria-otwarta{overflow:hidden}
           <h2 id="realizacje-tytul">Z terenu, nie z katalogu.</h2>
         </div>
         <p class="lead">Zdjęcia wykonanych robót, według kategorii</p>
+        <p class="makieta-nota">Podgląd galerii: kategorie korzystają na razie z tych samych zdjęć. Przypisanie do produktów i opisy wymagają potwierdzenia.</p>
       </div>
 
       <!-- Tymczasowo te same trzy zdjęcia w każdej kategorii; przypisanie zatwierdzi klient. -->
@@ -578,7 +749,7 @@ html.galeria-otwarta{overflow:hidden}
   </section>
 
   <!-- ============ DLACZEGO MY ============ -->
-  <section class="sekcja sekcja--ciemna" aria-labelledby="dlaczego-tytul">
+  <section class="sekcja sekcja--ciemna" id="o-nas" aria-labelledby="dlaczego-tytul">
     <div class="wrap">
       <div class="sekcja__naglowek">
         <div>
@@ -608,15 +779,29 @@ html.galeria-otwarta{overflow:hidden}
     </div>
   </section>
 
+  <!-- ============ WSPÓŁPRACA B2B ============ -->
+  <section class="sekcja" id="b2b" aria-labelledby="b2b-tytul">
+    <div class="wrap">
+      <article class="karta karta--szeroka">
+        <div>
+          <p class="eyebrow eyebrow--jasny">Dla firm</p>
+          <h2 id="b2b-tytul">Współpraca B2B</h2>
+          <p class="b2b__nota">Podgląd sekcji — zakres i warunki współpracy do uzupełnienia.</p>
+        </div>
+        <a class="btn btn--jasny" href="#formularz" data-wycena-kategoria="b2b" data-wycena-produkt="">Skontaktuj się w sprawie współpracy →</a>
+      </article>
+    </div>
+  </section>
+
   <!-- ============ KONTAKT ============ -->
   <section class="sekcja sekcja--mgla" id="kontakt" aria-labelledby="kontakt-tytul">
     <div class="wrap kontakt">
       <div>
-        <p class="eyebrow">Bezpłatny pomiar</p>
+        <p class="eyebrow">Kontakt i bezpłatna wycena</p>
         <h2 id="kontakt-tytul">Powiedz, co ma stanąć <br>resztę zrobimy my.</h2>
 
         <div class="kontakt__dane">
-          <a href="tel:+48575228298">123456789</a>
+          <a href="tel:+48575228298">575 228 298</a>
           <a href="mailto:gorka-ogrodzenia@wp.pl">gorka-ogrodzenia@wp.pl</a>
           <address>
             GÓRKA — Dachy, Bramy, Ogrodzenia<br>
@@ -625,10 +810,13 @@ html.galeria-otwarta{overflow:hidden}
           <a href="https://maps.app.goo.gl/5qg1jCLDBjKusZuU9" target="_blank" rel="noopener">
             Pokaż na mapie →
           </a>
+          <a class="kontakt__facebook" href="https://www.facebook.com/profile.php?id=100063507609259" target="_blank" rel="noopener">Zobacz nas na Facebooku ↗</a>
         </div>
       </div>
 
-      <form class="formularz" id="formularz" novalidate>
+      <form class="formularz" id="formularz" novalidate aria-labelledby="wycena-tytul" aria-describedby="formularz-demo">
+        <h3 id="wycena-tytul">Bezpłatna wycena</h3>
+        <p class="makieta-nota" id="formularz-demo">Formularz demonstracyjny — dane nie są wysyłane. Aby zapytać o ofertę, zadzwoń lub napisz e-mail.</p>
         <div class="pola">
           <div class="pole">
             <label for="imie">Imię</label>
@@ -645,13 +833,26 @@ html.galeria-otwarta{overflow:hidden}
           <div class="pole">
             <label for="zakres">Czego dotyczy</label>
             <select id="zakres" name="zakres">
-              <option>Ogrodzenie modułowe</option>
-              <option>Ogrodzenie łupane</option>
-              <option>Ogrodzenie metalowe</option>
-              <option>Brama garażowa</option>
-              <option>Dach</option>
-              <option>Inne / nie wiem</option>
+              <option value="">Wybierz kategorię</option>
+              <option value="variante">Ogrodzenia Variante</option>
+              <option value="valor">Ogrodzenia nieprzezierne VALOR</option>
+              <option value="metalowe">Ogrodzenia metalowe</option>
+              <option value="aluminiowe">Ogrodzenia aluminiowe</option>
+              <option value="bloczki">Bloczki ozdobne</option>
+              <option value="sztachety">Sztachety metalowe</option>
+              <option value="panelowe">Ogrodzenia panelowe</option>
+              <option value="akcesoria">Akcesoria / chemia</option>
+              <option value="nietypowe">Zamówienia nietypowe</option>
+              <option value="bramy">Bramy garażowe</option>
+              <option value="dachy">Dachy</option>
+              <option value="b2b">Współpraca B2B</option>
+              <option value="inne">Inne / nie wiem</option>
             </select>
+          </div>
+          <div class="pole pole--pelne">
+            <label for="produkt">Produkt / model (opcjonalnie)</label>
+            <input id="produkt" name="produkt" type="text" placeholder="Np. Primo, Piano, Perfetto" aria-describedby="produkt-pomoc">
+            <small id="produkt-pomoc">Wybór z oferty uzupełni to pole. Możesz go zmienić lub wpisać kilka produktów.</small>
           </div>
           <div class="pole pole--pelne">
             <label for="wiadomosc">Długość, teren, termin — ile wiesz</label>
@@ -659,9 +860,8 @@ html.galeria-otwarta{overflow:hidden}
           </div>
         </div>
         <div class="formularz__stopka">
-          <button class="btn btn--glowny" type="submit">Wyślij i zamów pomiar</button>
-          <p class="formularz__nota">Zapytanie trafia prosto do naszego systemu — oddzwaniamy w dniu roboczym.
-          Dane używamy tylko do kontaktu w sprawie wyceny.</p>
+          <button class="btn btn--glowny" type="submit">Sprawdź formularz (demo)</button>
+          <p class="formularz__nota">W tej wersji sprawdzisz wypełnienie formularza. Zapytanie nie trafi jeszcze do firmy.</p>
         </div>
         <p class="formularz__status" role="status" aria-live="polite"></p>
       </form>
@@ -695,11 +895,16 @@ html.galeria-otwarta{overflow:hidden}
       <div>
         <h4>Oferta</h4>
         <ul>
-          <li><a href="#oferta">Ogrodzenia modułowe</a></li>
-          <li><a href="#oferta">Ogrodzenia łupane</a></li>
-          <li><a href="#oferta">Ogrodzenia metalowe</a></li>
-          <li><a href="#oferta">Bramy garażowe</a></li>
-          <li><a href="#oferta">Dachy</a></li>
+          <li><a href="#oferta-variante">Ogrodzenia Variante</a></li>
+          <li><a href="#oferta-valor">Ogrodzenia nieprzezierne VALOR</a></li>
+          <li><a href="#oferta-metalowe">Ogrodzenia metalowe</a></li>
+          <li><a href="#oferta-aluminiowe">Ogrodzenia aluminiowe</a></li>
+          <li><a href="#oferta-bloczki">Bloczki ozdobne</a></li>
+          <li><a href="#oferta-sztachety">Sztachety metalowe</a></li>
+          <li><a href="#oferta-panelowe">Ogrodzenia panelowe</a></li>
+          <li><a href="#oferta-akcesoria">Akcesoria / chemia</a></li>
+          <li><a href="#oferta-nietypowe">Zamówienia nietypowe</a></li>
+          <li><a href="#oferta">Bramy garażowe i dachy</a></li>
         </ul>
       </div>
       <div>
@@ -707,13 +912,17 @@ html.galeria-otwarta{overflow:hidden}
         <ul>
           <li><a href="#realizacje">Realizacje</a></li>
           <li><a href="#proces">Jak pracujemy</a></li>
+          <li><a href="#o-nas">O nas</a></li>
+          <li><a href="#b2b">Współpraca B2B</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#formularz">Bezpłatna wycena</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=100063507609259" target="_blank" rel="noopener">Facebook ↗</a></li>
         </ul>
       </div>
       <div>
         <h4>Kontakt</h4>
         <ul>
-          <li><a href="tel:+48575228298">1234567</a></li>
+          <li><a href="tel:+48575228298">575 228 298</a></li>
           <li><a href="mailto:gorka-ogrodzenia@wp.pl">gorka-ogrodzenia@wp.pl</a></li>
           <li>adres</li>
         </ul>
@@ -725,6 +934,12 @@ html.galeria-otwarta{overflow:hidden}
     </div>
   </div>
 </footer>
+
+<a class="telefon-mobile" href="tel:+48575228298" aria-label="Zadzwoń teraz: 575 228 298">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 3.1 5.2 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L9 10.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.8 2.1Z"/></svg>
+  <span>Zadzwoń teraz</span>
+</a>
+
 
 <script type="application/ld+json">
 {
@@ -792,12 +1007,6 @@ html.galeria-otwarta{overflow:hidden}
   kategorie.forEach(function(link){
     link.addEventListener('click',function(e){otworzKategorie(e,link,link);});
   });
-  document.querySelectorAll('[data-otworz-kategorie]').forEach(function(link){
-    link.addEventListener('click',function(e){
-      var kategoria = kategorie.find(function(k){return k.dataset.kategoria === link.dataset.otworzKategorie;});
-      if(kategoria) otworzKategorie(e,link,kategoria);
-    });
-  });
   dialog.querySelector('[data-zamknij]').addEventListener('click',function(){dialog.close();});
   dialog.querySelector('[data-poprzednie]').addEventListener('click',function(){pokazZdjecie(aktywne-1);});
   dialog.querySelector('[data-nastepne]').addEventListener('click',function(){pokazZdjecie(aktywne+1);});
@@ -814,9 +1023,80 @@ html.galeria-otwarta{overflow:hidden}
     if(powrot) powrot.focus();
   });
 
+  var katalog = document.querySelector('.katalog');
+  var zakladki = Array.from(document.querySelectorAll('.katalog__zakladka'));
+  var panele = Array.from(document.querySelectorAll('.katalog__panel'));
+  if(katalog && zakladki.length){
+    katalog.classList.add('katalog--aktywny');
+    var lista = katalog.querySelector('.katalog__kategorie');
+    lista.setAttribute('role','tablist');
+    function ustawOrientacje(){lista.setAttribute('aria-orientation',window.matchMedia('(min-width:1100px)').matches ? 'vertical' : 'horizontal');}
+    ustawOrientacje();
+    window.addEventListener('resize',ustawOrientacje);
+    zakladki.forEach(function(link){
+      link.setAttribute('role','tab');
+      link.setAttribute('aria-controls',link.hash.slice(1));
+    });
+    panele.forEach(function(panel,index){
+      panel.setAttribute('role','tabpanel');
+      panel.setAttribute('aria-labelledby',zakladki[index].id);
+      panel.setAttribute('tabindex','0');
+    });
+    function wybierzKategorie(id){
+      var wybrana = zakladki.find(function(link){return link.hash === '#' + id;});
+      if(!wybrana) return;
+      zakladki.forEach(function(link){
+        var aktywna = link === wybrana;
+        link.setAttribute('aria-selected',String(aktywna));
+        link.tabIndex = aktywna ? 0 : -1;
+      });
+      panele.forEach(function(panel){panel.hidden = panel.id !== id;});
+    }
+    wybierzKategorie(panele.some(function(panel){return '#' + panel.id === location.hash;}) ? location.hash.slice(1) : panele[0].id);
+    zakladki.forEach(function(link,index){
+      link.addEventListener('click',function(e){
+        if(e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        wybierzKategorie(link.hash.slice(1));
+        history.replaceState(null,'',link.hash);
+      });
+      link.addEventListener('keydown',function(e){
+        var pionowo = lista.getAttribute('aria-orientation') === 'vertical';
+        var nastepny = pionowo ? 'ArrowDown' : 'ArrowRight';
+        var poprzedni = pionowo ? 'ArrowUp' : 'ArrowLeft';
+        var cel;
+        if(e.key === nastepny) cel = (index + 1) % zakladki.length;
+        if(e.key === poprzedni) cel = (index - 1 + zakladki.length) % zakladki.length;
+        if(e.key === 'Home') cel = 0;
+        if(e.key === 'End') cel = zakladki.length - 1;
+        if(cel === undefined) return;
+        e.preventDefault();
+        wybierzKategorie(zakladki[cel].hash.slice(1));
+        zakladki[cel].focus();
+      });
+    });
+    // Otwórz właściwy panel przed przewinięciem z linku w stopce.
+    document.querySelectorAll('a[href^="#oferta-"]:not(.katalog__zakladka)').forEach(function(link){
+      link.addEventListener('click',function(){wybierzKategorie(link.hash.slice(1));});
+    });
+    window.addEventListener('hashchange',function(){wybierzKategorie(location.hash.slice(1));});
+  }
+
   var form = document.getElementById('formularz');
   var status = form ? form.querySelector('.formularz__status') : null;
   if(form){
+    document.querySelectorAll('[data-wycena-kategoria]').forEach(function(link){
+      link.addEventListener('click',function(e){
+        if(e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+        form.elements.zakres.value = link.dataset.wycenaKategoria;
+        form.elements.produkt.value = link.dataset.wycenaProdukt;
+        status.textContent = '';
+      });
+    });
+    form.elements.zakres.addEventListener('change',function(){
+      form.elements.produkt.value = '';
+      status.textContent = '';
+    });
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var imie = form.imie.value.trim();
@@ -827,9 +1107,9 @@ html.galeria-otwarta{overflow:hidden}
         return;
       }
       // MOCKUP: docelowo POST /api/zapytania → zlecenie ze statusem "nowe" w CRM.
-      status.textContent = 'Dzięki, ' + imie + '. W wersji produkcyjnej to zapytanie tworzy zlecenie w CRM.';
+      status.textContent = 'Formularz wypełniony poprawnie. To demonstracja — dane nie zostały wysłane. Zadzwoń lub napisz e-mail, aby zapytać o wycenę.';
       status.style.color = '';
-      form.reset();
+      // Zachowaj dane, aby można było dalej sprawdzać formularz.
     });
   }
 })();
