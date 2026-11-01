@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GÓRKA — ogrodzenia, bramy i dachy na Podhalu | Rzepiska</title>
-<meta name="description" content="Ogrodzenia modułowe, łupane i metalowe, bramy garażowe oraz dachy. Pomiar, wycena i montaż własną ekipą — Rzepiska, Bukowina, Zakopane, Nowy Targ. Od 2015 roku.">
+<title>GÓRKA — ogrodzenia, bramy i dachy na Podhalu | Gronków</title>
+<meta name="description" content="Ogrodzenia modułowe, łupane i metalowe, bramy garażowe oraz dachy. Pomiar, wycena i montaż własną ekipą — Gronków, Bukowina, Zakopane, Nowy Targ. Od 2015 roku.">
 <meta name="robots" content="index,follow">
 <meta property="og:title" content="GÓRKA — ogrodzenia, bramy i dachy na Podhalu">
-<meta property="og:description" content="Pomiar, wycena i montaż własną ekipą. JONIEC · JARMEX · BUDMAT. Rzepiska, Podhale.">
+<meta property="og:description" content="Pomiar, wycena i montaż własną ekipą. JONIEC · JARMEX · BUDMAT. Gronków, Podhale.">
 <meta property="og:type" content="website">
 <!-- MOCKUP: wersja wstępna, jeden plik, bez buildu. Do podmiany: logo, zdjęcia realizacji, endpoint formularza. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -129,6 +129,16 @@ p{margin:0}
   border-bottom:1px solid transparent;
 }
 .nav a:hover{border-color:var(--modrzew)}
+.header a.nav__wycena{
+  padding:.95em 1.6em;
+  border:1px solid transparent;
+  border-radius:var(--r-pill);
+  background:var(--modrzew);
+  color:#fff;
+  font-weight:500;
+}
+.header a.nav__wycena:hover{background:var(--modrzew-ciemny);border-color:transparent}
+
 .header__cta{margin-left:auto;display:none}
 .header__tel{
   display:inline-flex;align-items:center;gap:.5em;
@@ -157,34 +167,7 @@ p{margin:0}
   .nav{margin-left:auto}
 }
 
-/* ---------- hero ---------- */
-.hero{padding-block:clamp(28px,4vw,56px)}
-.hero__in{display:grid;gap:28px;align-items:start}
-.hero__tekst{min-width:0}
-.hero__tytul{margin-top:18px;max-width:23ch;font-size:clamp(2rem,3.2vw,3rem)}
-.hero__zdjecie{margin:0;overflow:hidden;aspect-ratio:1/1;border-radius:var(--r-duzy);background:var(--piasek)}
-.hero__zdjecie img{width:100%;height:100%;object-fit:cover}
-@media(min-width:960px){
-  .hero__in{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:32px}
-  .hero__stopka{grid-column:1/-1}
-}
-@media(max-width:959px){.hero__zdjecie{grid-row:1;border-radius:28px}}
 section[id]{scroll-margin-top:120px}
-.hero__tytul em{font-style:italic;color:var(--jodla)}
-.hero__lead{margin-top:26px}
-.hero__akcje{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(100%,480px);gap:10px;margin-top:28px}
-.hero__akcje .btn{justify-content:center;text-align:center;padding:10px 12px;min-height:48px;font-size:.9375rem;line-height:1.4}
-.hero__akcje .btn--glowny{background:#AD4945;color:#fff}
-.hero__akcje .btn--glowny:hover{background:#923B38}
-@media(max-width:600px){.hero__akcje{grid-template-columns:1fr;width:min(100%,240px)}}
-.hero__stopka{
-  display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,44px);
-  margin-top:8px;padding-top:26px;
-  border-top:1px solid rgba(22,33,28,.14);
-}
-.hero__fakt{max-width:24ch}
-.hero__fakt strong{display:block;font-family:var(--f-head);font-size:1.05rem;font-weight:600}
-.hero__fakt span{font-size:1rem;color:#3C4A42}
 
 /* ---------- pasek marek ---------- */
 .marki{background:var(--las);color:var(--mgla);padding-block:clamp(26px,3.4vw,40px)}
@@ -340,7 +323,10 @@ html.galeria-otwarta{overflow:hidden}
 }
 
 /* Opinie: podgląd układu. Oceny i liczby opinii wymagają potwierdzenia. */
-.opinie{margin-top:24px}
+#oferta{padding-block:clamp(28px,4vw,56px)}
+#oferta-tytul{font-size:clamp(2rem,4vw,3.6rem)}
+.opinie{padding-bottom:clamp(36px,5vw,64px)}
+.opinie h2{margin-bottom:20px}
 .opinie__linki{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .opinia{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:14px 16px;border:1px solid #C8C2B6;border-radius:20px;text-decoration:none;background:var(--mgla);min-width:0}
 .opinia:hover{border-color:var(--jodla);background:#fff}
@@ -377,7 +363,16 @@ html.galeria-otwarta{overflow:hidden}
 .produkt h4{font-family:var(--f-head);font-weight:500;font-size:1.35rem;line-height:1.2;margin:0}
 .produkt p.produkt__opis,.produkt__opis{font-size:.9375rem;color:#4B5A52}
 .produkt .karta__link{padding-block:10px;line-height:1.5}
-.oferta__dalej{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin-top:30px}
+.oferta__dalej{margin-top:30px}
+.oferta__przyciski{display:flex;flex-wrap:nowrap;gap:12px;overflow-x:auto;padding:4px 4px 12px}
+.oferta__przyciski .btn{flex:0 0 auto;white-space:nowrap;padding:.9em 1.2em;font-size:.9375rem}
+.oferta__dalej > p{margin-top:8px}
+@media(min-width:1200px){
+  .header__in{gap:18px}
+  .nav{gap:16px;align-items:center}
+  .nav a{white-space:nowrap;font-size:.875rem}
+  .header a.nav__wycena{padding:.75em 1.1em}
+}
 .oferta__dalej p{font-size:.875rem;max-width:46ch;color:#4B5A52}
 .oferta--dodatkowa{padding-top:28px;border-top:1px solid #C8C2B6}
 .b2b__nota{margin-top:18px}
@@ -398,6 +393,27 @@ html.galeria-otwarta{overflow:hidden}
   .opinia{flex:0 0 85%;scroll-snap-align:start}
 }
 .system-opis{margin:18px 0 24px;line-height:1.7;max-width:75ch}.nowosc{display:inline-block;font:500 .75rem var(--f-body);background:var(--las);color:white;padding:5px 9px;border-radius:20px;vertical-align:middle}.konfigurator-grid{display:grid;gap:28px;margin-top:28px}.konfigurator-grid>*{min-width:0}.konfigurator-wynik{padding:24px;background:var(--kamien);border-radius:32px}.plot-podglad{height:220px;display:flex;flex-direction:column;justify-content:end;background:linear-gradient(#dce7e5 70%,#c8ccb9 70%);border-radius:20px;padding:22px;overflow:hidden}.plot-siatka{height:153px;border:6px solid var(--plot,#383e42);border-bottom-width:3px;background:repeating-linear-gradient(90deg,transparent 0 13px,var(--plot,#383e42) 13px 15px),repeating-linear-gradient(0deg,transparent 0 25px,var(--plot,#383e42) 25px 27px)}.plot-podstawa{height:22px;flex-shrink:0;background:#b6b4af;border:1px solid #777}.konfigurator-wynik .btn{font:inherit;cursor:pointer;margin-top:20px}.konfigurator-wynik .btn:disabled{opacity:.5;cursor:not-allowed}#k-wynik{margin-top:20px;font-size:1.1rem}@media(min-width:900px){.konfigurator-grid{grid-template-columns:1fr 1fr}}
+
+.produkt__schemat{margin:0;background:var(--kamien);border-radius:20px;color:var(--las);overflow:hidden}
+.produkt__schemat svg{display:block;width:100%;height:auto;stroke:currentColor;fill:none;stroke-width:2}
+.produkt__schemat figcaption{font-size:.75rem;text-align:center;padding:0 8px 12px;color:#4B5A52}
+.produkt__szczegoly{font-size:.875rem}.produkt__szczegoly summary,.faq-pytanie summary,.prywatnosc summary{cursor:pointer;font-weight:500;padding:14px 0}
+.produkt__szczegoly p{margin:10px 0}.produkt__szczegoly label{display:grid;gap:8px;margin:12px 0}
+.produkt__wariant{width:100%;padding:10px;border:1px solid #a5b1a8;border-radius:12px;font:inherit;background:white}
+.faq-pytanie{border-bottom:1px solid #c8c2b6;padding:6px 0}.faq-pytanie p{margin:0 0 18px}
+.prywatnosc{margin-top:28px;font-size:.875rem;border-top:1px solid #708478}.prywatnosc p{margin:10px 0;max-width:90ch}.prywatnosc .makieta-nota{color:#c7d3cb}
+.antyspam{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.kontakt__obszar{font-size:.9375rem}.formularz button:disabled{opacity:.6;cursor:wait}
+
+.produkt__foto{margin:0;overflow:hidden;border-radius:20px;background:#fff}
+.produkt__foto img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 75%}
+.produkt__foto--element img{object-fit:contain;object-position:center}
+.produkt__foto figcaption{padding:9px 10px;font-size:.75rem;line-height:1.5;color:#4B5A52}
+.produkt--powiekszalny{cursor:zoom-in}
+.produkt__powieksz{display:block;position:relative;color:inherit;text-decoration:none;cursor:zoom-in}
+.produkt__powieksz:focus-visible{outline-offset:-4px}
+.produkt__lupa{position:absolute;right:10px;bottom:10px;padding:6px 10px;border-radius:999px;background:var(--las);color:white;font-size:.75rem}
+.produkt--powiekszalny a,.produkt--powiekszalny summary{cursor:pointer}
 </style>
 </head>
 <body>
@@ -416,7 +432,7 @@ html.galeria-otwarta{overflow:hidden}
       <a href="#b2b">Współpraca B2B</a>
       <a href="#o-nas">O nas</a>
       <a href="#kontakt">Kontakt</a>
-      <a href="#formularz">Bezpłatna wycena</a>
+      <a class="btn btn--glowny nav__wycena" href="#formularz">Bezpłatna wycena</a>
     </nav>
 
     <div class="header__cta">
@@ -436,77 +452,12 @@ html.galeria-otwarta{overflow:hidden}
       <li><a href="#b2b">Współpraca B2B</a></li>
       <li><a href="#o-nas">O nas</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
-      <li><a href="#formularz">Bezpłatna wycena</a></li>
+      <li><a class="btn btn--glowny nav__wycena" href="#formularz">Bezpłatna wycena</a></li>
     </ul>
   </div>
 </header>
 
 <main id="tresc">
-
-  <!-- ============ HERO ============ -->
-  <section class="hero" aria-labelledby="hero-tytul">
-    <div class="wrap hero__in">
-      <div class="hero__tekst">
-      <p class="eyebrow"> Podhale · od 2015 roku</p>
-      <h1 class="hero__tytul" id="hero-tytul">Ogrodzenia, które <em>stoją</em> długo. te teksty to są jako wypełniacze na razie</h1>
-      <p class="lead hero__lead">
-        Modułowe, łupane i metalowe oraz bramy, furtki. Przyjeżdżamy, mierzymy,
-        wyceniamy i montujemy.
-      </p>
-      <div class="hero__akcje">
-        <a class="btn btn--glowny" href="#kontakt">Zamów bezpłatny pomiar</a>
-        <a class="btn btn--obrys" href="#realizacje">Zobacz realizacje</a>
-      </div>
-      <aside class="opinie" aria-label="Opinie o firmie">
-        <div class="opinie__linki">
-          <a class="opinia" href="https://maps.app.goo.gl/5qg1jCLDBjKusZuU9" target="_blank" rel="noopener" aria-label="Sprawdź opinie o firmie w Google — otwiera nową kartę">
-            <strong>Opinie Google ↗</strong>
-            <span class="opinia__gwiazdki" aria-hidden="true">☆☆☆☆☆</span>
-            <span class="opinia__status">Ocena do uzupełnienia</span>
-          </a>
-          <a class="opinia" href="https://www.facebook.com/profile.php?id=100063507609259" target="_blank" rel="noopener" aria-label="Sprawdź opinie o firmie na Facebooku — otwiera nową kartę">
-            <strong>Opinie Facebook ↗</strong>
-            <span class="opinia__gwiazdki" aria-hidden="true">☆☆☆☆☆</span>
-            <span class="opinia__status">Ocena do uzupełnienia</span>
-          </a>
-        </div>
-        <p class="opinie__nota">Podgląd: oceny i liczby opinii zostaną uzupełnione po potwierdzeniu danych z profili firmy.</p>
-      </aside>
-
-      </div>
-      <!-- Tymczasowe zdjęcie główne; docelowy wybór po stronie klienta. -->
-      <figure class="hero__zdjecie">
-        <img src="zdjecia/WhatsApp%20Image%202026-10-23%20at%2016.48.31.jpeg" alt="Ogrodzenie przy domu — zdjęcie z realizacji" width="2040" height="1530" fetchpriority="high">
-      </figure>
-      <div class="hero__stopka">
-        <div class="hero__fakt">
-          <strong>Własna ekipa</strong>
-          <span>Ta sama osoba mierzy, wycenia i montuje.</span>
-        </div>
-        <div class="hero__fakt">
-          <strong>Sprawdzone systemy</strong>
-          <span>JONIEC · JARMEX · BUDMAT</span>
-        </div>
-        <div class="hero__fakt">
-          <strong>Teren</strong>
-          <span>Rzepiska, Bukowina, Zakopane, Nowy Targ i okolice.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ MARKI ============ -->
-  <section class="marki" aria-label="Producenci, z którymi pracujemy">
-    <div class="wrap marki__in">
-      <p class="marki__etykieta">Pracujemy na systemach</p>
-      <ul class="marki__lista">
-        <li>Joniec</li>
-        <li>Jarmex</li>
-        <li>Budmat</li>
-        <li>i inne</li>
-      </ul>
-    </div>
-  </section>
 
   <!-- ============ OFERTA ============ -->
   <section class="sekcja" id="oferta" aria-labelledby="oferta-tytul">
@@ -514,11 +465,11 @@ html.galeria-otwarta{overflow:hidden}
       <div class="sekcja__naglowek">
         <div>
           <p class="eyebrow">Oferta</p>
-          <h2 id="oferta-tytul">Wybierz ogrodzenie dla siebie.</h2>
+          <h1 id="oferta-tytul">Wybierz ogrodzenie dla siebie.</h1>
         </div>
         <p class="lead">Specjalizujemy się w ogrodzeniach — wykorzystaj nasze doświadczenie. Dostarczamy najwyższej jakości systemy ogrodzeniowe.</p>
       </div>
-      <p class="makieta-nota">Podgląd oferty: zdjęcia i część opisów są do uzupełnienia. Zakres akcesoriów i chemii wymaga potwierdzenia.</p>
+      <p class="makieta-nota">Wybierz kategorię, porównaj modele i zapytaj o wycenę. Dostępne wymiary i wykończenie dobierzemy do Twojej posesji.</p>
       <div class="katalog">
         <nav class="katalog__kategorie" aria-label="Kategorie oferty">
           <a class="katalog__zakladka" id="zakladka-variante" href="#oferta-variante">Ogrodzenia Variante</a>
@@ -537,22 +488,25 @@ html.galeria-otwarta{overflow:hidden}
             <p class="system-opis">System Variante to ogrodzenia wykonane z ocynkowanej blachy. Oprócz gotowych wariantów można stworzyć własny wzór z dostępnych paneli o wysokości 10, 15 i 20 cm oraz dostosować wysokość i przezierność ogrodzenia. Panele można zamówić w długości do 300 cm. System nadaje się do montażu przy ogrodzeniach betonowych oraz na słupach stalowych.</p>
             <div class="produkty">
               <article class="karta produkt">
-                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <figure class="produkt__foto"><a class="produkt__powieksz" href="assets/producenci/budmat-primo.jpg" data-galeria-produkt data-start="0" data-nazwa="Zdjęcia oferty" data-zdjecia="[{&quot;src&quot;: &quot;assets/producenci/budmat-primo.jpg&quot;, &quot;alt&quot;: &quot;Primo · wariant 2 — materiał BUDMAT&quot;, &quot;caption&quot;: &quot;Primo · wariant 2 — materiał BUDMAT&quot;}, {&quot;src&quot;: &quot;assets/producenci/budmat-piano.jpg&quot;, &quot;alt&quot;: &quot;Piano — materiał BUDMAT&quot;, &quot;caption&quot;: &quot;Piano — materiał BUDMAT&quot;}, {&quot;src&quot;: &quot;assets/producenci/budmat-perfetto.jpg&quot;, &quot;alt&quot;: &quot;Perfetto — materiał BUDMAT&quot;, &quot;caption&quot;: &quot;Perfetto — materiał BUDMAT&quot;}]" aria-label="Powiększ zdjęcie: Primo · wariant 2 — materiał BUDMAT" aria-haspopup="dialog"><img src="assets/producenci/budmat-primo.jpg" alt="Primo · wariant 2 — materiał BUDMAT" loading="lazy" decoding="async"><span class="produkt__lupa" aria-hidden="true">Powiększ ↗</span></a><figcaption>Primo · wariant 2 — materiał BUDMAT</figcaption></figure>
                 <h4>Primo</h4>
-                <p class="produkt__opis">Ogrodzenie z poziomych paneli. Wybierz gotowy układ lub dopasuj rozmieszczenie paneli i prześwity do swojej posesji.</p>
+                <p class="produkt__opis">Ogrodzenie z poziomych paneli. Wybierz gotowy układ lub dopasuj rozmieszczenie paneli i prześwity do swojej posesji.</p><details class="produkt__szczegoly"><summary>Warianty i parametry</summary><p>Wymiary całego przęsła zależą od modelu. Ustalimy szerokość, wysokość, kolor, bramę i furtkę w wybranej kolekcji.</p><label>Wariant Primo<select class="produkt__wariant" data-model="Primo"><option>Dobierz przy wycenie</option><option>Wariant 2</option><option>Wariant 5</option></select></label><a href="https://variante.budmat.com/" target="_blank" rel="noopener">Katalog producenta ↗</a></details>
                 <a class="karta__link" href="#formularz" data-wycena-kategoria="variante" data-wycena-produkt="Primo">Zapytaj o wycenę →</a>
+                <a class="karta__link" href="#konfigurator">Konfigurator ogrodzeń panelowych →</a>
               </article>
               <article class="karta produkt">
-                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <figure class="produkt__foto"><a class="produkt__powieksz" href="assets/producenci/budmat-piano.jpg" data-galeria-produkt data-start="1" data-nazwa="Zdjęcia oferty" data-zdjecia="[{&quot;src&quot;: &quot;assets/producenci/budmat-primo.jpg&quot;, &quot;alt&quot;: &quot;Primo · wariant 2 — materiał BUDMAT&quot;, &quot;caption&quot;: &quot;Primo · wariant 2 — materiał BUDMAT&quot;}, {&quot;src&quot;: &quot;assets/producenci/budmat-piano.jpg&quot;, &quot;alt&quot;: &quot;Piano — materiał BUDMAT&quot;, &quot;caption&quot;: &quot;Piano — materiał BUDMAT&quot;}, {&quot;src&quot;: &quot;assets/producenci/budmat-perfetto.jpg&quot;, &quot;alt&quot;: &quot;Perfetto — materiał BUDMAT&quot;, &quot;caption&quot;: &quot;Perfetto — materiał BUDMAT&quot;}]" aria-label="Powiększ zdjęcie: Piano — materiał BUDMAT" aria-haspopup="dialog"><img src="assets/producenci/budmat-piano.jpg" alt="Piano — materiał BUDMAT" loading="lazy" decoding="async"><span class="produkt__lupa" aria-hidden="true">Powiększ ↗</span></a><figcaption>Piano — materiał BUDMAT</figcaption></figure>
                 <h4>Piano</h4>
-                <p class="produkt__opis">Ogrodzenie z poziomym wypełnieniem i prześwitami między panelami. Modele 100, 150 i 200 oznaczają wysokość panelu w milimetrach. Do przęseł dobierz bramę i furtkę.</p>
+                <p class="produkt__opis">Ogrodzenie z poziomym wypełnieniem i prześwitami między panelami. Modele 100, 150 i 200 oznaczają wysokość panelu w milimetrach. Do przęseł dobierz bramę i furtkę.</p><details class="produkt__szczegoly"><summary>Warianty i parametry</summary><p>Wymiary całego przęsła zależą od modelu. Ustalimy szerokość, wysokość, kolor, bramę i furtkę w wybranej kolekcji.</p><label>Wariant Piano<select class="produkt__wariant" data-model="Piano"><option>Dobierz przy wycenie</option><option>100</option><option>150</option><option>200</option></select></label><a href="https://variante.budmat.com/" target="_blank" rel="noopener">Katalog producenta ↗</a></details>
                 <a class="karta__link" href="#formularz" data-wycena-kategoria="variante" data-wycena-produkt="Piano">Zapytaj o wycenę →</a>
+                <a class="karta__link" href="#konfigurator">Konfigurator ogrodzeń panelowych →</a>
               </article>
               <article class="karta produkt">
-                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <figure class="produkt__foto"><a class="produkt__powieksz" href="assets/producenci/budmat-perfetto.jpg" data-galeria-produkt data-start="2" data-nazwa="Zdjęcia oferty" data-zdjecia="[{&quot;src&quot;: &quot;assets/producenci/budmat-primo.jpg&quot;, &quot;alt&quot;: &quot;Primo · wariant 2 — materiał BUDMAT&quot;, &quot;caption&quot;: &quot;Primo · wariant 2 — materiał BUDMAT&quot;}, {&quot;src&quot;: &quot;assets/producenci/budmat-piano.jpg&quot;, &quot;alt&quot;: &quot;Piano — materiał BUDMAT&quot;, &quot;caption&quot;: &quot;Piano — materiał BUDMAT&quot;}, {&quot;src&quot;: &quot;assets/producenci/budmat-perfetto.jpg&quot;, &quot;alt&quot;: &quot;Perfetto — materiał BUDMAT&quot;, &quot;caption&quot;: &quot;Perfetto — materiał BUDMAT&quot;}]" aria-label="Powiększ zdjęcie: Perfetto — materiał BUDMAT" aria-haspopup="dialog"><img src="assets/producenci/budmat-perfetto.jpg" alt="Perfetto — materiał BUDMAT" loading="lazy" decoding="async"><span class="produkt__lupa" aria-hidden="true">Powiększ ↗</span></a><figcaption>Perfetto — materiał BUDMAT</figcaption></figure>
                 <h4>Perfetto <span class="nowosc">Nowość</span></h4>
-                <p class="produkt__opis">Pełne przęsła osłaniają posesję i zapewniają prywatność. Kolekcja dla osób, które szukają ogrodzenia bez prześwitów.</p>
+                <p class="produkt__opis">Pełne przęsła osłaniają posesję i zapewniają prywatność. Kolekcja dla osób, które szukają ogrodzenia bez prześwitów.</p><details class="produkt__szczegoly"><summary>Warianty i parametry</summary><p>Wymiary całego przęsła zależą od modelu. Ustalimy szerokość, wysokość, kolor, bramę i furtkę w wybranej kolekcji.</p><label>Wariant Perfetto<select class="produkt__wariant" data-model="Perfetto"><option>Dobierz przy wycenie</option><option>100</option><option>150</option><option>200</option></select></label><a href="https://variante.budmat.com/" target="_blank" rel="noopener">Katalog producenta ↗</a></details>
                 <a class="karta__link" href="#formularz" data-wycena-kategoria="variante" data-wycena-produkt="Perfetto">Zapytaj o wycenę →</a>
+                <a class="karta__link" href="#konfigurator">Konfigurator ogrodzeń panelowych →</a>
               </article>
             </div>
             <p class="makieta-nota">* Paczka z ogrodzeniem zawiera przęsła w wybranych wariantach o standardowym wymiarze 120 × 200 cm. Szczegóły zestawu do potwierdzenia przy zamówieniu.</p>
@@ -560,27 +514,34 @@ html.galeria-otwarta{overflow:hidden}
           <section class="katalog__panel" id="oferta-valor" aria-labelledby="naglowek-valor">
             <h3 id="naglowek-valor">Ogrodzenia VALOR</h3>
             <p class="system-opis">Ogrodzenia Valor® (HANBUD) to cztery rodzaje lameli stworzone po to, abyś mógł dobrać idealne ogrodzenie do swojej posesji. Są one zarówno estetyczne, jak i trwałe. Wykonane z blachy o podwyższonej grubości i wytrzymałości, powleczone odporną powłoką polimerową. W przeciwieństwie do ogrodzeń wykonanych ze stali czarnej, nie wymagają konserwacji i malowania. Dzięki temu Twoje ogrodzenie będzie wyglądało jak nowe przez wiele lat.</p>
-            <p class="makieta-nota">Mock wariantów — zdjęcia, parametry i dostępność do uzupełnienia.</p><div class="produkty"><article class="karta produkt"><div class="produkt__zdjecie">Zdjęcie do uzupełnienia</div><h4>VALOR Palisada</h4><p>Opis wariantu do uzupełnienia.</p><a class="karta__link" href="#formularz" data-wycena-kategoria="valor" data-wycena-produkt="VALOR Palisada">Zapytaj o wycenę →</a></article><article class="karta produkt"><div class="produkt__zdjecie">Zdjęcie do uzupełnienia</div><h4>VALOR Prostokąt</h4><p>Opis wariantu do uzupełnienia.</p><a class="karta__link" href="#formularz" data-wycena-kategoria="valor" data-wycena-produkt="VALOR Prostokąt">Zapytaj o wycenę →</a></article><article class="karta produkt"><div class="produkt__zdjecie">Zdjęcie do uzupełnienia</div><h4>VALOR Romb</h4><p>Opis wariantu do uzupełnienia.</p><a class="karta__link" href="#formularz" data-wycena-kategoria="valor" data-wycena-produkt="VALOR Romb">Zapytaj o wycenę →</a></article><article class="karta produkt"><div class="produkt__zdjecie">Zdjęcie do uzupełnienia</div><h4>VALOR Żaluzja</h4><p>Opis wariantu do uzupełnienia.</p><a class="karta__link" href="#formularz" data-wycena-kategoria="valor" data-wycena-produkt="VALOR Żaluzja">Zapytaj o wycenę →</a></article></div>
+            <p class="makieta-nota">Porównaj cztery profile lameli. Wymiary, kolor i mocowania dobierzemy przy wycenie.</p><div class="produkty"><article class="karta produkt"><figure class="produkt__foto"><a class="produkt__powieksz" href="assets/producenci/hanbud-valor-palisada.webp" data-galeria-produkt data-start="0" data-nazwa="Zdjęcia oferty" data-zdjecia="[{&quot;src&quot;: &quot;assets/producenci/hanbud-valor-palisada.webp&quot;, &quot;alt&quot;: &quot;VALOR Palisada — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Palisada — materiał HANBUD&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-valor-prostokat.webp&quot;, &quot;alt&quot;: &quot;VALOR Prostokąt — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Prostokąt — materiał HANBUD&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-valor-romb.webp&quot;, &quot;alt&quot;: &quot;VALOR Romb — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Romb — materiał HANBUD&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-valor-zaluzja.webp&quot;, &quot;alt&quot;: &quot;VALOR Żaluzja — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Żaluzja — materiał HANBUD&quot;}]" aria-label="Powiększ zdjęcie: VALOR Palisada — materiał HANBUD" aria-haspopup="dialog"><img src="assets/producenci/hanbud-valor-palisada.webp" alt="VALOR Palisada — materiał HANBUD" loading="lazy" decoding="async"><span class="produkt__lupa" aria-hidden="true">Powiększ ↗</span></a><figcaption>VALOR Palisada — materiał HANBUD</figcaption></figure><h4>VALOR Palisada</h4><p>Poziomy układ lameli o palisadowym profilu. Rozstaw i stopień osłonięcia ustalimy dla wybranego zestawu.</p><a class="karta__link" href="#formularz" data-wycena-kategoria="valor" data-wycena-produkt="VALOR Palisada">Zapytaj o wycenę →</a>
+                <a class="karta__link" href="#konfigurator">Konfigurator ogrodzeń panelowych →</a></article><article class="karta produkt"><figure class="produkt__foto"><a class="produkt__powieksz" href="assets/producenci/hanbud-valor-prostokat.webp" data-galeria-produkt data-start="1" data-nazwa="Zdjęcia oferty" data-zdjecia="[{&quot;src&quot;: &quot;assets/producenci/hanbud-valor-palisada.webp&quot;, &quot;alt&quot;: &quot;VALOR Palisada — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Palisada — materiał HANBUD&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-valor-prostokat.webp&quot;, &quot;alt&quot;: &quot;VALOR Prostokąt — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Prostokąt — materiał HANBUD&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-valor-romb.webp&quot;, &quot;alt&quot;: &quot;VALOR Romb — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Romb — materiał HANBUD&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-valor-zaluzja.webp&quot;, &quot;alt&quot;: &quot;VALOR Żaluzja — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Żaluzja — materiał HANBUD&quot;}]" aria-label="Powiększ zdjęcie: VALOR Prostokąt — materiał HANBUD" aria-haspopup="dialog"><img src="assets/producenci/hanbud-valor-prostokat.webp" alt="VALOR Prostokąt — materiał HANBUD" loading="lazy" decoding="async"><span class="produkt__lupa" aria-hidden="true">Powiększ ↗</span></a><figcaption>VALOR Prostokąt — materiał HANBUD</figcaption></figure><h4>VALOR Prostokąt</h4><p>Wypełnienie z lameli o prostokątnym profilu. Wariant do zaplanowania osłony posesji w poziomym układzie.</p><a class="karta__link" href="#formularz" data-wycena-kategoria="valor" data-wycena-produkt="VALOR Prostokąt">Zapytaj o wycenę →</a>
+                <a class="karta__link" href="#konfigurator">Konfigurator ogrodzeń panelowych →</a></article><article class="karta produkt"><figure class="produkt__foto"><a class="produkt__powieksz" href="assets/producenci/hanbud-valor-romb.webp" data-galeria-produkt data-start="2" data-nazwa="Zdjęcia oferty" data-zdjecia="[{&quot;src&quot;: &quot;assets/producenci/hanbud-valor-palisada.webp&quot;, &quot;alt&quot;: &quot;VALOR Palisada — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Palisada — materiał HANBUD&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-valor-prostokat.webp&quot;, &quot;alt&quot;: &quot;VALOR Prostokąt — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Prostokąt — materiał HANBUD&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-valor-romb.webp&quot;, &quot;alt&quot;: &quot;VALOR Romb — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Romb — materiał HANBUD&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-valor-zaluzja.webp&quot;, &quot;alt&quot;: &quot;VALOR Żaluzja — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Żaluzja — materiał HANBUD&quot;}]" aria-label="Powiększ zdjęcie: VALOR Romb — materiał HANBUD" aria-haspopup="dialog"><img src="assets/producenci/hanbud-valor-romb.webp" alt="VALOR Romb — materiał HANBUD" loading="lazy" decoding="async"><span class="produkt__lupa" aria-hidden="true">Powiększ ↗</span></a><figcaption>VALOR Romb — materiał HANBUD</figcaption></figure><h4>VALOR Romb</h4><p>Lamele o przekroju rombu tworzą charakterystyczny układ pod kątem.</p><a class="karta__link" href="#formularz" data-wycena-kategoria="valor" data-wycena-produkt="VALOR Romb">Zapytaj o wycenę →</a>
+                <a class="karta__link" href="#konfigurator">Konfigurator ogrodzeń panelowych →</a></article><article class="karta produkt"><figure class="produkt__foto"><a class="produkt__powieksz" href="assets/producenci/hanbud-valor-zaluzja.webp" data-galeria-produkt data-start="3" data-nazwa="Zdjęcia oferty" data-zdjecia="[{&quot;src&quot;: &quot;assets/producenci/hanbud-valor-palisada.webp&quot;, &quot;alt&quot;: &quot;VALOR Palisada — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Palisada — materiał HANBUD&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-valor-prostokat.webp&quot;, &quot;alt&quot;: &quot;VALOR Prostokąt — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Prostokąt — materiał HANBUD&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-valor-romb.webp&quot;, &quot;alt&quot;: &quot;VALOR Romb — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Romb — materiał HANBUD&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-valor-zaluzja.webp&quot;, &quot;alt&quot;: &quot;VALOR Żaluzja — materiał HANBUD&quot;, &quot;caption&quot;: &quot;VALOR Żaluzja — materiał HANBUD&quot;}]" aria-label="Powiększ zdjęcie: VALOR Żaluzja — materiał HANBUD" aria-haspopup="dialog"><img src="assets/producenci/hanbud-valor-zaluzja.webp" alt="VALOR Żaluzja — materiał HANBUD" loading="lazy" decoding="async"><span class="produkt__lupa" aria-hidden="true">Powiększ ↗</span></a><figcaption>VALOR Żaluzja — materiał HANBUD</figcaption></figure><h4>VALOR Żaluzja</h4><p>Pochylone lamele tworzą żaluzjowe wypełnienie. Stopień osłonięcia zależy od układu i kąta patrzenia.</p><a class="karta__link" href="#formularz" data-wycena-kategoria="valor" data-wycena-produkt="VALOR Żaluzja">Zapytaj o wycenę →</a>
+                <a class="karta__link" href="#konfigurator">Konfigurator ogrodzeń panelowych →</a></article></div>
           </section>
           <section class="katalog__panel" id="oferta-metalowe" aria-labelledby="naglowek-metalowe">
             <h3 id="naglowek-metalowe">Ogrodzenia metalowe</h3>
             <div class="produkty">
               <article class="karta produkt">
-                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <figure class="produkt__foto"><a class="produkt__powieksz" href="assets/producenci/emima-ogrodzenia.webp" data-galeria-produkt data-start="0" data-nazwa="Zdjęcia oferty" data-zdjecia="[{&quot;src&quot;: &quot;assets/producenci/emima-ogrodzenia.webp&quot;, &quot;alt&quot;: &quot;Emima — materiał Emima&quot;, &quot;caption&quot;: &quot;Emima — materiał Emima&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-palisada-3d.jpg&quot;, &quot;alt&quot;: &quot;Palisada 3D — HANBUD — materiał HANBUD&quot;, &quot;caption&quot;: &quot;Palisada 3D — HANBUD — materiał HANBUD&quot;}]" aria-label="Powiększ zdjęcie: Emima — materiał Emima" aria-haspopup="dialog"><img src="assets/producenci/emima-ogrodzenia.webp" alt="Emima — materiał Emima" loading="lazy" decoding="async"><span class="produkt__lupa" aria-hidden="true">Powiększ ↗</span></a><figcaption>Emima — materiał Emima</figcaption></figure>
                 <h4>Emima</h4>
-                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <p class="produkt__opis">Ogrodzenia palisadowe dopasowywane do wymiarów działki. Przęsła można połączyć z bramą i furtką w spójnym układzie.</p>
                 <a class="karta__link" href="#formularz" data-wycena-kategoria="metalowe" data-wycena-produkt="Emima">Zapytaj o wycenę →</a>
+                <a class="karta__link" href="#konfigurator">Konfigurator ogrodzeń panelowych →</a>
               </article>
-<article class="karta produkt"><div class="produkt__zdjecie">Zdjęcie do uzupełnienia</div><h4>Palisada 3D — HANBUD</h4><p class="produkt__opis">Kolejna propozycja ogrodzenia wykonanego z blachy. Dzięki wytrzymałej powłoce poliestrowej i grubej warstwie cynku posiada podwyższoną odporność na trudne warunki atmosferyczne. Jest to produkt dający wiele możliwości. Rozstaw między panelami i wysokość ogrodzenia można dostosować do indywidualnych potrzeb. PALISADA 3D sprawdzi się zarówno jako przęsło, wypełnienie bramy/furtki czy nieprzezierna ścianka.</p><a class="karta__link" href="#formularz" data-wycena-kategoria="metalowe" data-wycena-produkt="Palisada 3D HANBUD">Zapytaj o wycenę →</a></article>            </div>
+<article class="karta produkt"><figure class="produkt__foto produkt__foto--element"><a class="produkt__powieksz" href="assets/producenci/hanbud-palisada-3d.jpg" data-galeria-produkt data-start="1" data-nazwa="Zdjęcia oferty" data-zdjecia="[{&quot;src&quot;: &quot;assets/producenci/emima-ogrodzenia.webp&quot;, &quot;alt&quot;: &quot;Emima — materiał Emima&quot;, &quot;caption&quot;: &quot;Emima — materiał Emima&quot;}, {&quot;src&quot;: &quot;assets/producenci/hanbud-palisada-3d.jpg&quot;, &quot;alt&quot;: &quot;Palisada 3D — HANBUD — materiał HANBUD&quot;, &quot;caption&quot;: &quot;Palisada 3D — HANBUD — materiał HANBUD&quot;}]" aria-label="Powiększ zdjęcie: Palisada 3D — HANBUD — materiał HANBUD" aria-haspopup="dialog"><img src="assets/producenci/hanbud-palisada-3d.jpg" alt="Palisada 3D — HANBUD — materiał HANBUD" loading="lazy" decoding="async"><span class="produkt__lupa" aria-hidden="true">Powiększ ↗</span></a><figcaption>Palisada 3D — HANBUD — materiał HANBUD</figcaption></figure><h4>Palisada 3D — HANBUD</h4><p class="produkt__opis">Kolejna propozycja ogrodzenia wykonanego z blachy. Dzięki wytrzymałej powłoce poliestrowej i grubej warstwie cynku posiada podwyższoną odporność na trudne warunki atmosferyczne. Jest to produkt dający wiele możliwości. Rozstaw między panelami i wysokość ogrodzenia można dostosować do indywidualnych potrzeb. PALISADA 3D sprawdzi się zarówno jako przęsło, wypełnienie bramy/furtki czy nieprzezierna ścianka.</p><a class="karta__link" href="#formularz" data-wycena-kategoria="metalowe" data-wycena-produkt="Palisada 3D HANBUD">Zapytaj o wycenę →</a>
+                <a class="karta__link" href="#konfigurator">Konfigurator ogrodzeń panelowych →</a></article>            </div>
           </section>
           <section class="katalog__panel" id="oferta-aluminiowe" aria-labelledby="naglowek-aluminiowe">
             <h3 id="naglowek-aluminiowe">Ogrodzenia aluminiowe</h3>
             <div class="produkty">
               <article class="karta produkt">
-                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <figure class="produkt__schemat"><svg viewBox="0 0 280 180" role="img" aria-label="Schemat poglądowy ogrodzenia, bez odwzorowania modelu"><path d="M22 35v115M258 35v115" stroke-width="7"/><rect x="30" y="45" width="220" height="12" rx="2" fill="currentColor" stroke="none"/><rect x="30" y="63" width="220" height="12" rx="2" fill="currentColor" stroke="none"/><rect x="30" y="81" width="220" height="12" rx="2" fill="currentColor" stroke="none"/><rect x="30" y="99" width="220" height="12" rx="2" fill="currentColor" stroke="none"/><rect x="30" y="117" width="220" height="12" rx="2" fill="currentColor" stroke="none"/></svg><figcaption>Schemat poglądowy</figcaption></figure>
                 <h4>Ogrodzenia aluminiowe</h4>
-                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <p class="produkt__opis">Ogrodzenia z aluminiowym wypełnieniem. Przy wycenie ustalimy wzór, wysokość, kolor i sposób mocowania.</p>
                 <a class="karta__link" href="#formularz" data-wycena-kategoria="aluminiowe" data-wycena-produkt="Ogrodzenia aluminiowe">Zapytaj o wycenę →</a>
+                <a class="karta__link" href="#konfigurator">Konfigurator ogrodzeń panelowych →</a>
               </article>
             </div>
           </section>
@@ -588,21 +549,21 @@ html.galeria-otwarta{overflow:hidden}
             <h3 id="naglowek-bloczki">Bloczki ozdobne</h3><p class="system-opis">Ogrodzenie modułowe to idealny wybór dla osób, które szukają prostych nowoczesnych form. Ogromną zaletą ogrodzeń jest prosty montaż. Aby sprostać oczekiwaniom najbardziej wymagających Inwestorów, w naszej ofercie znajdziecie Państwo produkty trzech najbardziej znanych producentów na rynku.</p>
             <div class="produkty">
               <article class="karta produkt">
-                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <figure class="produkt__schemat"><svg viewBox="0 0 280 180" role="img" aria-label="Schemat poglądowy ogrodzenia, bez odwzorowania modelu"><path d="M22 35v115M258 35v115" stroke-width="7"/><rect x="28" y="45" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="83" y="45" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="138" y="45" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="193" y="45" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="33" y="79" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="88" y="79" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="143" y="79" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="198" y="79" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="28" y="113" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="83" y="113" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="138" y="113" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="193" y="113" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/></svg><figcaption>Schemat poglądowy</figcaption></figure>
                 <h4>Joniec</h4>
-                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <p class="produkt__opis">Bloczki do budowy słupków i murków ogrodzeniowych. Dobierzemy kolekcję, kolor i układ do przęseł oraz bramy.</p>
                 <a class="karta__link" href="#formularz" data-wycena-kategoria="bloczki" data-wycena-produkt="Joniec">Zapytaj o wycenę →</a>
               </article>
               <article class="karta produkt">
-                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <figure class="produkt__schemat"><svg viewBox="0 0 280 180" role="img" aria-label="Schemat poglądowy ogrodzenia, bez odwzorowania modelu"><path d="M22 35v115M258 35v115" stroke-width="7"/><rect x="28" y="45" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="83" y="45" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="138" y="45" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="193" y="45" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="33" y="79" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="88" y="79" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="143" y="79" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="198" y="79" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="28" y="113" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="83" y="113" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="138" y="113" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="193" y="113" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/></svg><figcaption>Schemat poglądowy</figcaption></figure>
                 <h4>Bruk-bet</h4>
-                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <p class="produkt__opis">Elementy betonowe do słupków i murków. Wybór formatu i wykończenia pozwala dopasować ogrodzenie do otoczenia domu.</p>
                 <a class="karta__link" href="#formularz" data-wycena-kategoria="bloczki" data-wycena-produkt="Bruk-bet">Zapytaj o wycenę →</a>
               </article>
               <article class="karta produkt">
-                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <figure class="produkt__schemat"><svg viewBox="0 0 280 180" role="img" aria-label="Schemat poglądowy ogrodzenia, bez odwzorowania modelu"><path d="M22 35v115M258 35v115" stroke-width="7"/><rect x="28" y="45" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="83" y="45" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="138" y="45" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="193" y="45" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="33" y="79" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="88" y="79" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="143" y="79" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="198" y="79" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="28" y="113" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="83" y="113" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="138" y="113" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/><rect x="193" y="113" width="51" height="30" rx="2" fill="#b6b0a4" stroke="#817d73"/></svg><figcaption>Schemat poglądowy</figcaption></figure>
                 <h4>Konekt</h4>
-                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <p class="produkt__opis">Systemy bloczków ogrodzeniowych do budowy słupków i murków. Kolekcję oraz potrzebne elementy ustalimy przy wycenie.</p>
                 <a class="karta__link" href="#formularz" data-wycena-kategoria="bloczki" data-wycena-produkt="Konekt">Zapytaj o wycenę →</a>
               </article>
             </div>
@@ -611,10 +572,11 @@ html.galeria-otwarta{overflow:hidden}
             <h3 id="naglowek-sztachety">Sztachety metalowe</h3>
             <div class="produkty">
               <article class="karta produkt">
-                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <figure class="produkt__schemat"><svg viewBox="0 0 280 180" role="img" aria-label="Schemat poglądowy ogrodzenia, bez odwzorowania modelu"><path d="M22 35v115M258 35v115" stroke-width="7"/><path d="M35 42v100"/><path d="M53 42v100"/><path d="M71 42v100"/><path d="M89 42v100"/><path d="M107 42v100"/><path d="M125 42v100"/><path d="M143 42v100"/><path d="M161 42v100"/><path d="M179 42v100"/><path d="M197 42v100"/><path d="M215 42v100"/><path d="M233 42v100"/><path d="M30 60h220M30 115h220"/></svg><figcaption>Schemat poglądowy</figcaption></figure>
                 <h4>Sztachety metalowe</h4>
-                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <p class="produkt__opis">Metalowe sztachety do przęseł, bram i furtek. Możesz zaplanować ich rozstaw, wysokość i kolor.</p>
                 <a class="karta__link" href="#formularz" data-wycena-kategoria="sztachety" data-wycena-produkt="Sztachety metalowe">Zapytaj o wycenę →</a>
+                <a class="karta__link" href="#konfigurator">Konfigurator ogrodzeń panelowych →</a>
               </article>
             </div>
           </section>
@@ -622,21 +584,22 @@ html.galeria-otwarta{overflow:hidden}
             <h3 id="naglowek-panelowe">Ogrodzenia panelowe</h3>
             <div class="produkty">
               <article class="karta produkt">
-                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <figure class="produkt__schemat"><svg viewBox="0 0 280 180" role="img" aria-label="Schemat poglądowy ogrodzenia, bez odwzorowania modelu"><path d="M22 35v115M258 35v115" stroke-width="7"/><path d="M35 42v100"/><path d="M53 42v100"/><path d="M71 42v100"/><path d="M89 42v100"/><path d="M107 42v100"/><path d="M125 42v100"/><path d="M143 42v100"/><path d="M161 42v100"/><path d="M179 42v100"/><path d="M197 42v100"/><path d="M215 42v100"/><path d="M233 42v100"/><path d="M30 60h220M30 115h220"/></svg><figcaption>Schemat poglądowy</figcaption></figure>
                 <h4>Ogrodzenia panelowe</h4>
-                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <p class="produkt__opis">Panele zgrzewane do ogrodzenia działki. Wybierz wysokość, grubość drutu i wariant z podmurówką lub bez niej.</p>
                 <a class="karta__link" href="#formularz" data-wycena-kategoria="panelowe" data-wycena-produkt="Ogrodzenia panelowe">Zapytaj o wycenę →</a>
+                <a class="karta__link" href="#konfigurator">Konfigurator ogrodzeń panelowych →</a>
               </article>
             </div>
           </section>
           <section class="katalog__panel" id="oferta-akcesoria" aria-labelledby="naglowek-akcesoria">
             <h3 id="naglowek-akcesoria">Akcesoria / chemia</h3>
-            <p class="makieta-nota">Kategoria robocza — obecność i asortyment do potwierdzenia.</p>
+            <p class="makieta-nota">Dobór akcesoriów zależy od wybranego ogrodzenia.</p>
             <div class="produkty">
               <article class="karta produkt">
-                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <figure class="produkt__schemat"><svg viewBox="0 0 280 180" role="img" aria-label="Schemat poglądowy ogrodzenia, bez odwzorowania modelu"><path d="M22 35v115M258 35v115" stroke-width="7"/><rect x="30" y="45" width="220" height="12" rx="2" fill="currentColor" stroke="none"/><rect x="30" y="63" width="220" height="12" rx="2" fill="currentColor" stroke="none"/><rect x="30" y="81" width="220" height="12" rx="2" fill="currentColor" stroke="none"/><rect x="30" y="99" width="220" height="12" rx="2" fill="currentColor" stroke="none"/><rect x="30" y="117" width="220" height="12" rx="2" fill="currentColor" stroke="none"/></svg><figcaption>Schemat poglądowy</figcaption></figure>
                 <h4>Akcesoria / chemia</h4>
-                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <p class="produkt__opis">Zapytaj o mocowania, elementy montażowe i preparaty do wybranego systemu. Dobór oraz dostępność potwierdzimy przy wycenie.</p>
                 <a class="karta__link" href="#formularz" data-wycena-kategoria="akcesoria" data-wycena-produkt="Akcesoria / chemia">Zapytaj o wycenę →</a>
               </article>
             </div>
@@ -645,16 +608,17 @@ html.galeria-otwarta{overflow:hidden}
             <h3 id="naglowek-nietypowe">Zamówienia nietypowe</h3>
             <div class="produkty">
               <article class="karta produkt">
-                <div class="produkt__zdjecie"><span aria-hidden="true">＋</span><span>Zdjęcie do uzupełnienia</span></div>
+                <figure class="produkt__schemat"><svg viewBox="0 0 280 180" role="img" aria-label="Schemat poglądowy ogrodzenia, bez odwzorowania modelu"><path d="M22 35v115M258 35v115" stroke-width="7"/><rect x="30" y="45" width="220" height="12" rx="2" fill="currentColor" stroke="none"/><rect x="30" y="63" width="220" height="12" rx="2" fill="currentColor" stroke="none"/><rect x="30" y="81" width="220" height="12" rx="2" fill="currentColor" stroke="none"/><rect x="30" y="99" width="220" height="12" rx="2" fill="currentColor" stroke="none"/><rect x="30" y="117" width="220" height="12" rx="2" fill="currentColor" stroke="none"/></svg><figcaption>Schemat poglądowy</figcaption></figure>
                 <h4>Zamówienia nietypowe</h4>
-                <p class="produkt__opis">Opis do uzupełnienia po ustaleniu szczegółów oferty.</p>
+                <p class="produkt__opis">Masz nietypowy wymiar, spadek terenu lub własny pomysł? Prześlij opis i orientacyjne wymiary — omówimy możliwe rozwiązanie.</p>
                 <a class="karta__link" href="#formularz" data-wycena-kategoria="nietypowe" data-wycena-produkt="Zamówienia nietypowe">Zapytaj o wycenę →</a>
+                <a class="karta__link" href="#konfigurator">Konfigurator ogrodzeń panelowych →</a>
               </article>
             </div>
           </section>
         </div>
       </div>
-      <div class="oferta__dalej"><a class="btn btn--glowny" href="#konfigurator">Skonfiguruj ogrodzenie panelowe →</a><a class="btn btn--obrys" href="#realizacje">Zobacz nasze realizacje →</a><p>Galeria inspiracji — przypisanie zdjęć do produktów jest jeszcze do ustalenia.</p></div>
+      <div class="oferta__dalej"><div class="oferta__przyciski"><a class="btn btn--glowny" href="#konfigurator">Skonfiguruj ogrodzenie panelowe →</a><a class="btn btn--glowny" href="#formularz">Zamów bezpłatną wycenę</a><a class="btn btn--obrys" href="#realizacje">Zobacz nasze realizacje →</a></div><p>Galeria inspiracji — przypisanie zdjęć do produktów jest jeszcze do ustalenia.</p></div>
       <div class="oferta oferta--dodatkowa" aria-label="Pozostała oferta">
         <article class="karta">
           <h3>Bramy garażowe</h3>
@@ -663,10 +627,40 @@ html.galeria-otwarta{overflow:hidden}
         </article>
         <article class="karta">
           <h3>Dachy — pokrycia i remonty</h3>
-          <p class="produkt__opis">Opis do uzupełnienia.</p>
+          <p class="produkt__opis">Zapytaj o zakres prac i dobór pokrycia do swojego budynku.</p>
           <a class="karta__link" href="#formularz" data-wycena-kategoria="dachy" data-wycena-produkt="">Zapytaj o dach →</a>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="opinie wrap" id="opinie" aria-labelledby="opinie-tytul">
+        <h2 id="opinie-tytul">Opinie o firmie</h2>
+        <div class="opinie__linki">
+          <a class="opinia" href="https://maps.app.goo.gl/ZtreM4ihHpJzSU78A" target="_blank" rel="noopener" aria-label="Sprawdź opinie o firmie w Google — otwiera nową kartę">
+            <strong>Opinie Google ↗</strong>
+            <span class="opinia__gwiazdki" aria-hidden="true">★★★★★</span>
+            <span class="opinia__status">5,0 / 5 · 37 opinii · odczyt 1.11.2026</span>
+          </a>
+          <a class="opinia" href="https://www.facebook.com/profile.php?id=100063507609259" target="_blank" rel="noopener" aria-label="Sprawdź opinie o firmie na Facebooku — otwiera nową kartę">
+            <strong>Opinie Facebook ↗</strong>
+            <span class="opinia__gwiazdki" aria-hidden="true">☆☆☆☆☆</span>
+            <span class="opinia__status">Zobacz profil i opinie klientów</span>
+          </a>
+        </div>
+        <p class="opinie__nota">Aktualne opinie znajdziesz na profilach firmy. Ocena Google jest odczytem z podanej daty.</p>
+      </section>
+
+  <!-- ============ MARKI ============ -->
+  <section class="marki" aria-label="Producenci, z którymi pracujemy">
+    <div class="wrap marki__in">
+      <p class="marki__etykieta">Pracujemy na systemach</p>
+      <ul class="marki__lista">
+        <li>Joniec</li>
+        <li>Jarmex</li>
+        <li>Budmat</li>
+        <li>i inne</li>
+      </ul>
     </div>
   </section>
 
@@ -766,7 +760,7 @@ html.galeria-otwarta{overflow:hidden}
       <div class="sekcja__naglowek">
         <div>
           <p class="eyebrow eyebrow--jasny">Dlaczego my</p>
-          <h2 id="dlaczego-tytul">Trzy powody, żeby zadzwonić właśnie tutaj.</h2>
+          <h2 id="dlaczego-tytul">Dlaczego warto z nami porozmawiać.</h2>
         </div>
       </div>
       <div class="dlaczego">
@@ -784,8 +778,8 @@ html.galeria-otwarta{overflow:hidden}
           <p>Wiatr, mróz, spadki i kamień pod łopatą. Wiemy, gdzie trzeba głębiej i gdzie trzeba inaczej.</p>
         </div>
         <div>
-          <h3>coś innego</h3>
-          <p>można dodać więcej punktów.</p>
+          <h3>Blisko Twojej inwestycji</h3>
+          <p>Działamy głównie do 50 km od Gronkowa — w Nowym Targu, Zakopanem, Bukowinie Tatrzańskiej i okolicach. Jeśli inwestycja jest dalej, np. około 60 km, skontaktuj się z nami. Możliwość dojazdu ustalimy indywidualnie.</p>
         </div>
       </div>
     </div>
@@ -798,13 +792,14 @@ html.galeria-otwarta{overflow:hidden}
         <div>
           <p class="eyebrow eyebrow--jasny">Dla firm</p>
           <h2 id="b2b-tytul">Współpraca B2B</h2>
-          <p class="b2b__nota">Podgląd sekcji — zakres i warunki współpracy do uzupełnienia.</p>
+          <p class="b2b__nota">Planujesz zakup ogrodzenia dla firmy lub szukasz wykonawcy? Opisz zakres inwestycji. Warunki współpracy ustalimy indywidualnie.</p>
         </div>
         <a class="btn btn--jasny" href="#formularz" data-wycena-kategoria="b2b" data-wycena-produkt="">Skontaktuj się w sprawie współpracy →</a>
       </article>
     </div>
   </section>
 
+<section class="sekcja" id="faq" aria-labelledby="faq-tytul"><div class="wrap wrap--waski"><p class="eyebrow">Przed zamówieniem</p><h2 id="faq-tytul">Pytania o ogrodzenie</h2><details class="faq-pytanie"><summary>Gdzie dojeżdżacie na montaż?</summary><p>Działamy głównie do 50 km od Gronkowa — w Nowym Targu, Zakopanem, Bukowinie Tatrzańskiej i okolicach. Jeśli inwestycja jest dalej, np. około 60 km, skontaktuj się z nami. Możliwość dojazdu ustalimy indywidualnie.</p></details><details class="faq-pytanie"><summary>Co przygotować do bezpłatnej wyceny?</summary><p>Podaj miejscowość inwestycji, orientacyjną długość ogrodzenia i wybrany model. Dopisz, czy planujesz bramę, furtkę i montaż. Jeżeli nie znasz wszystkich wymiarów, opisz to, co już wiesz.</p></details><details class="faq-pytanie"><summary>Czym różnią się PRIMO, PIANO i PERFETTO?</summary><p>To trzy kolekcje systemu Variante. PRIMO pozwala komponować układ paneli, PIANO ma poziome profile z prześwitami, a PERFETTO tworzy osłaniające wypełnienie żaluzjowe. Szczegóły zależą od wariantu.</p></details><details class="faq-pytanie"><summary>Czy dobiorę bramę i furtkę do ogrodzenia?</summary><p>Przy wycenie możemy uwzględnić przęsła, bramę i furtkę. Dostępne wymiary, wzór oraz kierunek otwierania ustalimy dla wybranego systemu.</p></details><details class="faq-pytanie"><summary>Czy wynik kalkulatora jest gotową wyceną?</summary><p>Kalkulator pokazuje orientacyjną liczbę paneli i słupków dla jednego prostego odcinka. Cenę i kompletny zestaw materiałów ustalimy po poznaniu wymiarów i warunków montażu.</p></details><details class="faq-pytanie"><summary>Kiedy poznam termin i koszt realizacji?</summary><p>Po ustaleniu zakresu, produktu i miejsca inwestycji. W zapytaniu podaj preferowany termin — potwierdzimy możliwy harmonogram przy wycenie.</p></details></div></section>
   <!-- ============ KONTAKT ============ -->
   <section class="sekcja sekcja--mgla" id="kontakt" aria-labelledby="kontakt-tytul">
     <div class="wrap kontakt">
@@ -817,30 +812,32 @@ html.galeria-otwarta{overflow:hidden}
           <a href="mailto:gorka-ogrodzenia@wp.pl">gorka-ogrodzenia@wp.pl</a>
           <address>
             GÓRKA — Dachy, Bramy, Ogrodzenia<br>
-            adres biura
+            Gronków 234, 34-400 Gronków
           </address>
-          <a href="https://maps.app.goo.gl/5qg1jCLDBjKusZuU9" target="_blank" rel="noopener">
+          <p class="kontakt__obszar">Działamy głównie do 50 km od Gronkowa — w Nowym Targu, Zakopanem, Bukowinie Tatrzańskiej i okolicach. Jeśli inwestycja jest dalej, np. około 60 km, skontaktuj się z nami. Możliwość dojazdu ustalimy indywidualnie.</p>
+          <a href="https://maps.app.goo.gl/ZtreM4ihHpJzSU78A" target="_blank" rel="noopener">
             Pokaż na mapie →
           </a>
           <a class="kontakt__facebook" href="https://www.facebook.com/profile.php?id=100063507609259" target="_blank" rel="noopener">Zobacz nas na Facebooku ↗</a>
         </div>
       </div>
 
-      <form class="formularz" id="formularz" novalidate aria-labelledby="wycena-tytul" aria-describedby="formularz-demo">
+      <form class="formularz" id="formularz" data-preview="true" action="#formularz" method="post" aria-labelledby="wycena-tytul" aria-describedby="formularz-demo">
         <h3 id="wycena-tytul">Bezpłatna wycena</h3>
-        <p class="makieta-nota" id="formularz-demo">Formularz demonstracyjny — dane nie są wysyłane. Aby zapytać o ofertę, zadzwoń lub napisz e-mail.</p>
+        <p class="makieta-nota" id="formularz-demo">To podgląd formularza — zapytania nie są wysyłane. Aby zamówić wycenę, napisz na gorka-ogrodzenia@wp.pl lub zadzwoń pod +48 575 228 298.</p>
         <div class="pola">
           <div class="pole">
             <label for="imie">Imię</label>
-            <input id="imie" name="imie" type="text" autocomplete="given-name" required>
+            <input maxlength="100" id="imie" name="imie" type="text" autocomplete="given-name" required>
           </div>
           <div class="pole">
             <label for="telefon">Telefon</label>
-            <input id="telefon" name="telefon" type="tel" inputmode="tel" autocomplete="tel" placeholder="np. +48 600 100 200 lub +421…" required>
+            <input maxlength="40" id="telefon" name="telefon" type="tel" inputmode="tel" autocomplete="tel" placeholder="np. +48 600 100 200 lub +421…" required>
           </div>
+          <div class="pole"><label for="email">E-mail (opcjonalnie)</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254"></div>
           <div class="pole">
             <label for="miejscowosc">Miejscowość</label>
-            <input id="miejscowosc" name="miejscowosc" type="text" autocomplete="address-level2">
+            <input maxlength="150" id="miejscowosc" name="miejscowosc" type="text" autocomplete="address-level2">
           </div>
           <div class="pole">
             <label for="zakres">Czego dotyczy</label>
@@ -863,17 +860,18 @@ html.galeria-otwarta{overflow:hidden}
           </div>
           <div class="pole pole--pelne">
             <label for="produkt">Produkt / model (opcjonalnie)</label>
-            <input id="produkt" name="produkt" type="text" placeholder="Np. Primo, Piano, Perfetto" aria-describedby="produkt-pomoc">
+            <input maxlength="200" id="produkt" name="produkt" type="text" placeholder="Np. Primo, Piano, Perfetto" aria-describedby="produkt-pomoc">
             <small id="produkt-pomoc">Wybór z oferty uzupełni to pole. Możesz go zmienić lub wpisać kilka produktów.</small>
           </div>
           <div class="pole pole--pelne">
             <label for="wiadomosc">Długość, teren, termin — ile wiesz</label>
-            <textarea id="wiadomosc" name="wiadomosc" placeholder="Np. 40 m, działka na spadku, chcę zamknąć do wiosny."></textarea>
+            <textarea maxlength="4000" id="wiadomosc" name="wiadomosc" placeholder="Np. 40 m, działka na spadku, chcę zamknąć do wiosny."></textarea>
           </div>
         </div>
+        <div class="antyspam" aria-hidden="true"><label for="website">Pozostaw puste</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         <div class="formularz__stopka">
-          <button class="btn btn--glowny" type="submit">Sprawdź formularz (demo)</button>
-          <p class="formularz__nota">W tej wersji sprawdzisz wypełnienie formularza. Zapytanie nie trafi jeszcze do firmy.</p>
+          <button class="btn btn--glowny" type="submit">Sprawdź formularz</button>
+          <p class="formularz__nota">Dane wykorzystamy do odpowiedzi na zapytanie. <a href="#prywatnosc">Prywatność i cookies</a>.</p>
         </div>
         <p class="formularz__status" role="status" aria-live="polite"></p>
       </form>
@@ -927,6 +925,7 @@ html.galeria-otwarta{overflow:hidden}
           <li><a href="#o-nas">O nas</a></li>
           <li><a href="#b2b">Współpraca B2B</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#faq">Pytania i odpowiedzi</a></li>
           <li><a href="#formularz">Bezpłatna wycena</a></li>
           <li><a href="https://www.facebook.com/profile.php?id=100063507609259" target="_blank" rel="noopener">Facebook ↗</a></li>
         </ul>
@@ -936,13 +935,14 @@ html.galeria-otwarta{overflow:hidden}
         <ul>
           <li><a href="tel:+48575228298">+48 575 228 298</a></li>
           <li><a href="mailto:gorka-ogrodzenia@wp.pl">gorka-ogrodzenia@wp.pl</a></li>
-          <li>adres</li>
+          <li>Gronków 234, 34-400 Gronków</li>
         </ul>
       </div>
     </div>
+<details class="prywatnosc" id="prywatnosc"><summary>Prywatność i cookies</summary><p>Ta wersja strony nie zapisuje plików cookies ani danych formularza w przeglądarce i nie korzysta z analityki ani reklam. Czcionki są pobierane z Google Fonts. Mapy i profile społecznościowe otwierają się po kliknięciu linku jako usługi zewnętrzne.</p><p>Dane kontaktowe i opis inwestycji podajesz dobrowolnie, aby GÓRKA — Nowoczesne ogrodzenia mogła odpowiedzieć na zapytanie i przygotować ofertę. Podstawą jest podjęcie działań przed zawarciem umowy na Twoje żądanie, a w pozostałych sprawach uzasadniony interes polegający na obsłudze korespondencji. Dostęp mogą mieć dostawcy hostingu i poczty. Dane przechowujemy przez obsługę zapytania, a następnie w zakresie potrzebnym do rozliczeń i ochrony roszczeń.</p><p>W sprawach dostępu, sprostowania, usunięcia, ograniczenia, przenoszenia danych i sprzeciwu napisz na <a href="mailto:gorka-ogrodzenia@wp.pl">gorka-ogrodzenia@wp.pl</a>. Przysługuje Ci skarga do Prezesa UODO. Dane nie są wykorzystywane do podejmowania automatycznych decyzji.</p><p class="makieta-nota">Projekt informacji — pełne dane administratora i zasady przechowywania do potwierdzenia przed uruchomieniem formularza na hostingu.</p></details>
     <div class="stopka__dol">
       <span>© 2026 GÓRKA — Dachy, Bramy, Ogrodzenia</span>
-      <span>Projekt wstępny · mockup</span>
+      <span>Gronków · Podhale</span>
     </div>
   </div>
 </footer>
@@ -963,9 +963,9 @@ html.galeria-otwarta{overflow:hidden}
   "email":"gorka-ogrodzenia@wp.pl",
   "address":{
     "@type":"PostalAddress",
-    "streetAddress":"ul. Potok Bryjów 6",
-    "postalCode":"34-532",
-    "addressLocality":"Rzepiska",
+    "streetAddress":"Gronków 234",
+    "postalCode":"34-400",
+    "addressLocality":"Gronków",
     "addressRegion":"małopolskie",
     "addressCountry":"PL"
   },
@@ -1004,7 +1004,7 @@ html.galeria-otwarta{overflow:hidden}
     var obraz = dialog.querySelector('.galeria-dialog__obraz');
     obraz.src = zdjecia[aktywne].src;
     obraz.alt = zdjecia[aktywne].alt;
-    dialog.querySelector('.galeria-dialog__licznik').textContent = nazwaKategorii + ' · ' + (aktywne + 1) + ' / ' + zdjecia.length;
+    dialog.querySelector('.galeria-dialog__licznik').textContent = (zdjecia[aktywne].caption || nazwaKategorii) + ' · ' + (aktywne + 1) + ' / ' + zdjecia.length;
   }
   function otworzKategorie(e, link, kategoria){
     if(e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || typeof dialog.showModal !== 'function') return;
@@ -1012,12 +1012,26 @@ html.galeria-otwarta{overflow:hidden}
     powrot = link;
     zdjecia = JSON.parse(kategoria.dataset.zdjecia);
     nazwaKategorii = kategoria.dataset.nazwa;
-    pokazZdjecie(0);
+    pokazZdjecie(Number(kategoria.dataset.start || 0));
+    dialog.setAttribute('aria-label', nazwaKategorii);
+    dialog.querySelector('.galeria-dialog__nawigacja').hidden = zdjecia.length < 2;
     dialog.showModal();
     document.documentElement.classList.add('galeria-otwarta');
   }
   kategorie.forEach(function(link){
     link.addEventListener('click',function(e){otworzKategorie(e,link,link);});
+  });
+  document.querySelectorAll('[data-galeria-produkt]').forEach(function(link){
+    link.addEventListener('click', function(event){
+      otworzKategorie(event, link, link);
+    });
+    var card = link.closest('article');
+    card.classList.add('produkt--powiekszalny');
+    card.addEventListener('click', function(event){
+      if (event.target.closest('a, button, input, select, textarea, label, details')) return;
+      if (window.getSelection().toString().trim()) return;
+      otworzKategorie(event, link, link);
+    });
   });
   dialog.querySelector('[data-zamknij]').addEventListener('click',function(){dialog.close();});
   dialog.querySelector('[data-poprzednie]').addEventListener('click',function(){pokazZdjecie(aktywne-1);});
@@ -1101,7 +1115,9 @@ html.galeria-otwarta{overflow:hidden}
       link.addEventListener('click',function(e){
         if(e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
         form.elements.zakres.value = link.dataset.wycenaKategoria;
-        form.elements.produkt.value = link.dataset.wycenaProdukt;
+        var card = link.closest('article');
+        var variant = card ? card.querySelector('.produkt__wariant') : null;
+        form.elements.produkt.value = link.dataset.wycenaProdukt + (variant && variant.selectedIndex > 0 ? ' ' + variant.value : '');
         status.textContent = '';
       });
     });
@@ -1109,19 +1125,45 @@ html.galeria-otwarta{overflow:hidden}
       form.elements.produkt.value = '';
       status.textContent = '';
     });
-    form.addEventListener('submit', function(e){
+    form.addEventListener('submit', async function(e){
       e.preventDefault();
-      var imie = form.imie.value.trim();
-      var tel = form.telefon.value.trim();
-      if(imie.length < 2 || tel.replace(/\D/g,'').length < 9){
-        status.textContent = 'Podaj imię i numer telefonu — bez tego nie oddzwonimy.';
-        status.style.color = '#8C5527';
+      if (!form.reportValidity()) return;
+      var phone = form.elements.telefon.value.trim();
+      var digits = phone.replace(/\D/g, '');
+      if (!/^\+?[0-9 ()-]+$/.test(phone) || digits.length < 9 || digits.length > 15) {
+        status.textContent = 'Sprawdź numer telefonu, np. +48 lub +421 i numer abonenta.';
         return;
       }
-      // MOCKUP: docelowo POST /api/zapytania → zlecenie ze statusem "nowe" w CRM.
-      status.textContent = 'Formularz wypełniony poprawnie. To demonstracja — dane nie zostały wysłane. Zadzwoń lub napisz e-mail, aby zapytać o wycenę.';
-      status.style.color = '';
-      // Zachowaj dane, aby można było dalej sprawdzać formularz.
+      if (form.elements.imie.value.trim().length < 2) {
+        status.textContent = 'Podaj imię (co najmniej dwa znaki).';
+        return;
+      }
+      if (form.dataset.preview === 'true') {
+        status.textContent = 'Formularz wypełniony poprawnie. To podgląd — zapytanie nie zostało wysłane. Napisz na gorka-ogrodzenia@wp.pl lub zadzwoń pod +48 575 228 298.';
+        return;
+      }
+      if (location.protocol === 'file:') {
+        status.textContent = 'Otwórz lokalny podgląd przez serwer, aby przetestować wiadomość. Możesz też napisać na gorka-ogrodzenia@wp.pl.';
+        return;
+      }
+      var submit = form.querySelector('[type="submit"]');
+      submit.disabled = true;
+      status.textContent = 'Przekazywanie zapytania…';
+      try {
+        var payload = Object.fromEntries(new FormData(form));
+        payload.zakres = form.elements.zakres.options[form.elements.zakres.selectedIndex].text;
+        var response = await fetch(form.action, {
+          method: 'POST', headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload), signal: AbortSignal.timeout(20000)
+        });
+        var result = await response.json();
+        if (!response.ok) throw new Error(result.message || 'Nie udało się wysłać zapytania.');
+        status.textContent = result.message;
+      } catch (error) {
+        status.textContent = 'Nie potwierdzono wysyłki. Dane pozostają w formularzu. Sprawdź połączenie lub napisz na gorka-ogrodzenia@wp.pl.';
+      } finally {
+        submit.disabled = false;
+      }
     });
   }
 })();
@@ -1139,7 +1181,7 @@ html.galeria-otwarta{overflow:hidden}
  summary='Konfiguracja poglądowa: ogrodzenie panelowe 3D, odcinek '+length+' m, wysokość panelu '+height+' cm, drut '+wire+' mm, kolor '+color.options[color.selectedIndex].text+', podmurówka: '+base+'. Orientacyjnie '+panels+' paneli 2,5 m i '+(panels+1)+' słupków. Cena do indywidualnej wyceny.';
  }
  form.addEventListener('input',update);form.addEventListener('change',update);update();
- button.addEventListener('click',function(){update();if(button.disabled)return;var quote=document.getElementById('formularz');quote.elements.zakres.value='panelowe';quote.elements.produkt.value='Ogrodzenie panelowe 3D';var message=quote.elements.wiadomosc;var previous=message.dataset.konfiguracja;if(previous)message.value=message.value.replace(previous,'').trim();message.value=(message.value ? message.value+'\n\n':'')+summary;message.dataset.konfiguracja=summary;quote.querySelector('.formularz__status').textContent='Konfiguracja przeniesiona. Formularz demonstracyjny — dane nie są wysyłane.';location.hash='formularz';quote.elements.imie.focus({preventScroll:true});});
+ button.addEventListener('click',function(){update();if(button.disabled)return;var quote=document.getElementById('formularz');quote.elements.zakres.value='panelowe';quote.elements.produkt.value='Ogrodzenie panelowe 3D';var message=quote.elements.wiadomosc;var previous=message.dataset.konfiguracja;if(previous)message.value=message.value.replace(previous,'').trim();message.value=(message.value ? message.value+'\n\n':'')+summary;message.dataset.konfiguracja=summary;quote.querySelector('.formularz__status').textContent='Konfiguracja przeniesiona do formularza demonstracyjnego.';location.hash='formularz';quote.elements.imie.focus({preventScroll:true});});
 })();
 </script>
 </body>
